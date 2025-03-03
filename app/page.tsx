@@ -31,8 +31,8 @@ export default function Home() {
           animate={{ opacity: 1, y: 0 }}
           className="text-center"
         >
-          <Avatar className="w-32 h-32 mb-8 mx-auto">
-            <AvatarImage src="/path/to/your/avatar.jpg" alt="Kyaw Phyo Thu" />
+          <Avatar className="w-32 h-32 mb-8 mx-auto border-4 border-primary/20">
+            <AvatarImage src="/images/profile.png" alt="Kyaw Phyo Thu" className="object-cover" />
             <AvatarFallback className="text-4xl">KP</AvatarFallback>
           </Avatar>
           <h1 className="text-6xl font-bold mb-4">Kyaw Phyo Thu</h1>
