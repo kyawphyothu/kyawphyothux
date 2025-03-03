@@ -58,10 +58,13 @@ export default function Home() {
           transition={{ duration: 0.6 }}
           className="text-center"
         >
-          <Avatar className="w-32 h-32 mb-8 mx-auto border-4 border-primary/20">
-            <AvatarImage src="/images/profile.png" alt="Kyaw Phyo Thu" className="object-cover" />
-            <AvatarFallback className="text-4xl">KP</AvatarFallback>
-          </Avatar>
+          {/* More explicit sizing for Safari compatibility */}
+          <div className="relative mx-auto mb-8" style={{ width: '160px', height: '160px' }}>
+            <Avatar className="w-full h-full border-4 border-primary/20">
+              <AvatarImage src="/images/profile.png" alt="Kyaw Phyo Thu" className="object-cover" />
+              <AvatarFallback className="text-5xl">KP</AvatarFallback>
+            </Avatar>
+          </div>
           <h1 className="text-4xl sm:text-6xl font-bold mb-4">Kyaw Phyo Thu</h1>
           <p className="text-xl text-muted-foreground mb-8">Software Engineer & Web Developer</p>
           <div className="flex flex-wrap gap-4 justify-center">
