@@ -1,10 +1,12 @@
 "use client"
 
 import Image from "next/image";
+import Link from "next/link";
 import { motion } from "framer-motion";
 import { Card, CardHeader, CardTitle, CardContent, CardFooter } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
+import { ArrowRight } from "lucide-react";
 
 export default function Home() {
   const container = {
@@ -29,17 +31,22 @@ export default function Home() {
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
           className="text-center"
         >
           <Avatar className="w-32 h-32 mb-8 mx-auto border-4 border-primary/20">
             <AvatarImage src="/images/profile.png" alt="Kyaw Phyo Thu" className="object-cover" />
             <AvatarFallback className="text-4xl">KP</AvatarFallback>
           </Avatar>
-          <h1 className="text-6xl font-bold mb-4">Kyaw Phyo Thu</h1>
+          <h1 className="text-4xl sm:text-6xl font-bold mb-4">Kyaw Phyo Thu</h1>
           <p className="text-xl text-muted-foreground mb-8">Software Engineer & Web Developer</p>
-          <div className="flex gap-4 justify-center">
-            <Button>View Projects</Button>
-            <Button variant="outline">Contact Me</Button>
+          <div className="flex flex-wrap gap-4 justify-center">
+            <Button asChild>
+              <Link href="/projects">View Projects</Link>
+            </Button>
+            <Button variant="outline" asChild>
+              <Link href="/contact">Contact Me</Link>
+            </Button>
           </div>
         </motion.div>
         <motion.div 
@@ -47,7 +54,7 @@ export default function Home() {
           transition={{ duration: 2, repeat: Infinity }}
           className="absolute bottom-8"
         >
-          <span className="text-3xl">↓</span>
+          <ArrowRight size={24} className="rotate-90" />
         </motion.div>
       </section>
 
@@ -73,6 +80,13 @@ export default function Home() {
                   that solve real-world problems.
                 </p>
               </CardContent>
+              <CardFooter>
+                <Button variant="link" asChild className="p-0">
+                  <Link href="/about">
+                    Learn More <ArrowRight className="ml-2 h-4 w-4" />
+                  </Link>
+                </Button>
+              </CardFooter>
             </Card>
           </motion.div>
 
@@ -113,11 +127,22 @@ export default function Home() {
                       </p>
                     </CardContent>
                     <CardFooter>
-                      <Button variant="link">Learn More →</Button>
+                      <Button variant="link" asChild className="p-0">
+                        <Link href={`/projects#project${project}`}>
+                          Learn More <ArrowRight className="ml-2 h-4 w-4" />
+                        </Link>
+                      </Button>
                     </CardFooter>
                   </Card>
                 ))}
               </CardContent>
+              <CardFooter className="justify-center pt-6">
+                <Button asChild>
+                  <Link href="/projects">
+                    View All Projects <ArrowRight className="ml-2 h-4 w-4" />
+                  </Link>
+                </Button>
+              </CardFooter>
             </Card>
           </motion.div>
         </motion.div>
