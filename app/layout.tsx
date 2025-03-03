@@ -10,8 +10,23 @@ import { cn } from "@/lib/utils"
 const inter = Inter({ subsets: ["latin"] })
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://kyawphyothu.com'),
   title: "Kyaw Phyo Thu - Software Engineer & Web Developer",
   description: "Portfolio of Kyaw Phyo Thu, a Software Engineer & Web Developer specializing in modern web technologies.",
+  openGraph: {
+    title: "Kyaw Phyo Thu's Portfolio",
+    description: "Explore the professional work and projects of Kyaw Phyo Thu.",
+    url: "https://kyawphyothu.com",
+    type: "website",
+    locale: "en_US",
+    images: [
+      {
+        url: "/images/profile.png",
+        width: 1080,
+        height: 1080,
+      }
+    ]
+  }
 }
 
 export default function RootLayout({
