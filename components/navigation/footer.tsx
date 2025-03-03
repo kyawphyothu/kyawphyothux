@@ -30,8 +30,8 @@ export function Footer() {
   ]
 
   return (
-    <footer className="border-t bg-background py-8">
-      <div className="container flex flex-col items-center justify-between gap-4 md:flex-row">
+    <footer className="border-t bg-background py-8 w-full">
+      <div className="container max-w-6xl mx-auto flex flex-col items-center justify-between gap-4 md:flex-row">
         <motion.p
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}

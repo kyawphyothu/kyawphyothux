@@ -35,7 +35,7 @@ export function Navbar() {
 
   return (
     <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
-      <div className="container flex h-16 items-center justify-between">
+      <div className="container max-w-6xl mx-auto flex h-16 items-center justify-between">
         <Link href="/" className="font-bold text-xl">
           <motion.div
             initial={{ opacity: 0, x: -10 }}
@@ -84,7 +84,7 @@ export function Navbar() {
           exit={{ opacity: 0, height: 0 }}
           className="md:hidden border-b"
         >
-          <div className="container flex flex-col space-y-4 py-4">
+          <div className="container max-w-6xl mx-auto flex flex-col space-y-4 py-4">
             {routes.map((route) => (
               <Link
                 key={route.href}
