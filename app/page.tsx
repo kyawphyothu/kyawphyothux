@@ -7,8 +7,29 @@ import { Card, CardHeader, CardTitle, CardContent, CardFooter } from "@/componen
 import { Button } from "@/components/ui/button";
 import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
 import { ArrowRight } from "lucide-react";
+import { useEffect, useState } from "react";
 
 export default function Home() {
+  const [windowHeight, setWindowHeight] = useState("100vh");
+  
+  // This effect handles the viewport height calculation for Safari
+  useEffect(() => {
+    // Set the initial height
+    const setHeight = () => {
+      const vh = window.innerHeight * 0.01;
+      document.documentElement.style.setProperty('--vh', `${vh}px`);
+      setWindowHeight(`calc(100 * var(--vh, 1vh) - 4rem)`);
+    };
+    
+    setHeight();
+    
+    // Update the height on resize
+    window.addEventListener('resize', setHeight);
+    
+    // Cleanup
+    return () => window.removeEventListener('resize', setHeight);
+  }, []);
+
   const container = {
     hidden: { opacity: 0 },
     show: {
@@ -27,7 +48,10 @@ export default function Home() {
   return (
     <div className="min-h-screen bg-gradient-to-b from-background to-secondary/20">
       {/* Hero Section */}
-      <section className="h-screen flex flex-col justify-center items-center relative p-8">
+      <section 
+        className="flex flex-col justify-center items-center relative p-8"
+        style={{ minHeight: windowHeight }}
+      >
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
