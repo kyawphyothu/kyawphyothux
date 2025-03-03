@@ -39,7 +39,7 @@ export default function AboutPage() {
   ]
 
   return (
-    <div className="container py-12 space-y-12">
+    <div className="container max-w-5xl mx-auto py-12 px-4 sm:px-6 lg:px-8 space-y-12">
       <motion.div
         initial="hidden"
         animate="visible"

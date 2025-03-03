@@ -65,7 +65,7 @@ export default function ProjectsPage() {
   }
 
   return (
-    <div className="container py-12">
+    <div className="container max-w-5xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
       <motion.h1 
         className="text-4xl font-bold mb-8"
         initial={{ opacity: 0, y: -20 }}
