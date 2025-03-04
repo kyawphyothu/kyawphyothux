@@ -2,8 +2,10 @@
 
 import { motion } from "framer-motion"
 import { Github, Linkedin, Mail, Twitter } from "lucide-react"
+import { useTranslations } from 'next-intl'
 
 export function Footer() {
+  const t = useTranslations('footer')
   const currentYear = new Date().getFullYear()
 
   const socialLinks = [
@@ -24,7 +26,7 @@ export function Footer() {
     },
     {
       name: "Email",
-      href: "mailto:your.email@example.com",
+      href: "mailto:kyawphyothukpt256@gmail.com",
       icon: <Mail className="h-5 w-5" />,
     },
   ]
@@ -38,7 +40,7 @@ export function Footer() {
           transition={{ delay: 0.2 }}
           className="text-center text-sm leading-loose text-muted-foreground md:text-left"
         >
-          © {currentYear} Kyaw Phyo Thu. All rights reserved.
+          {t('copyright', { year: currentYear })}
         </motion.p>
         <div className="flex gap-4">
           {socialLinks.map((link, i) => (
