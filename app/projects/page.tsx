@@ -19,7 +19,7 @@ export default function ProjectsPage() {
       title: "She Pawn Shop Management System",
       description: "A comprehensive mobile application built with Expo and React Native for managing a family pawn shop business. This app handles inventory tracking, financial management, and reporting.",
       type: "mobile",
-      tags: ["Expo", "React Native", "Laravel", "RESTful API", "Financial Management"],
+      tags: ["Expo", "React Native", "TypeScript", "Laravel", "RESTful API", "Financial Management"],
       features: [
         { name: "Daily Transaction History", icon: <Clock className="h-4 w-4 text-blue-500" /> },
         { name: "Gold Inventory Tracking", icon: <Database className="h-4 w-4 text-yellow-500" /> },
@@ -31,7 +31,7 @@ export default function ProjectsPage() {
         { src: "/images/she/daily-history.png", alt: "Daily History Screen" },
         { src: "/images/she/orders.png", alt: "Orders Screen" }
       ],
-      github: "https://github.com/username/pawnshop-management",
+      github: "#",
       demo: "#"
     },
     {
@@ -50,8 +50,8 @@ export default function ProjectsPage() {
         { src: "/images/pomodoro/timer.png", alt: "Active Timer" },
         { src: "/images/pomodoro/ai-task.png", alt: "AI Task Creation" }
       ],
-      github: "https://github.com/username/pomodoai",
-      demo: "https://pomodoai.example.com"
+      github: "#",
+      demo: "https://pomoxx.kyawphyothu.com"
     }
   ]
 
@@ -98,19 +98,21 @@ export default function ProjectsPage() {
                 <div className="md:w-2/5 p-4 bg-muted/30">
                   <div className="flex flex-wrap justify-center gap-4">
                     {project.type === "mobile" ? (
-                      // Multiple mobile screenshots for She Pawn Shop
-                      project.screenshots.map((screenshot, i) => (
-                        <div key={i} className="w-[120px] md:w-[100px] lg:w-[120px] rounded-md overflow-hidden shadow-sm">
-                          <div className="aspect-[9/16] relative">
-                            <Image 
-                              src={screenshot.src} 
-                              alt={screenshot.alt} 
-                              fill
-                              className="object-cover"
-                            />
+                      // Mobile screenshots for She Pawn Shop - side by side
+                      <div className="flex justify-center gap-2 md:gap-3">
+                        {project.screenshots.map((screenshot, i) => (
+                          <div key={i} className="w-[100px] md:w-[90px] lg:w-[110px] rounded-md overflow-hidden shadow-sm">
+                            <div className="aspect-[9/16] relative">
+                              <Image 
+                                src={screenshot.src} 
+                                alt={screenshot.alt} 
+                                fill
+                                className="object-cover"
+                              />
+                            </div>
                           </div>
-                        </div>
-                      ))
+                        ))}
+                      </div>
                     ) : (
                       // Single screenshot for web projects (PomodoAI)
                       <div className="w-full max-w-[320px] rounded-md overflow-hidden shadow-sm">
@@ -161,7 +163,7 @@ export default function ProjectsPage() {
                   </CardContent>
                   
                   <CardFooter className="flex gap-4 pt-0">
-                    {project.github && (
+                    {project.github && project.github !=="#" && (
                       <Button variant="outline" size="sm" asChild>
                         <a href={project.github} target="_blank" rel="noopener noreferrer">
                           <Github className="mr-2 h-4 w-4" />
