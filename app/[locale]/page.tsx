@@ -144,38 +144,44 @@ export default function Home() {
               </CardHeader>
               <CardContent className="grid md:grid-cols-2 gap-6">
                 {tHome.raw('projects.items').map((project: any, index: number) => (
-                  <Card key={index} className="overflow-hidden border-0 shadow-sm hover:shadow-md transition-shadow">
-                    <div className="h-48 w-full relative bg-muted">
-                      <Image
-                        src={project.image} 
-                        alt={project.title}
-                        fill
-                        className="object-cover"
-                      />
-                    </div>
-                    <CardHeader>
-                      <CardTitle>{project.title}</CardTitle>
-                    </CardHeader>
-                    <CardContent>
-                      <p className="text-sm text-muted-foreground mb-4">
-                        {project.description}
-                      </p>
-                      <div className="flex flex-wrap gap-1 mt-2">
-                        {project.technologies.map((tech: string, techIndex: number) => (
-                          <span key={techIndex} className="px-2 py-1 bg-secondary rounded-full text-xs">
-                            {tech}
-                          </span>
-                        ))}
-                      </div>
-                    </CardContent>
-                    <CardFooter>
-                      <Button variant="link" asChild className="p-0">
-                        <Link href={{ pathname: '/projects' }}>
-                          {tHome('projects.learnMore')} <ArrowRight className="ml-2 h-4 w-4" />
-                        </Link>
-                      </Button>
-                    </CardFooter>
-                  </Card>
+                  <motion.div 
+                    key={index}
+                    whileHover={{ y: -5 }}
+                    className="transition-all duration-200"
+                  >
+                    <Link href={{ pathname: '/projects', hash: `project-${project.id}` }} className="block">
+                      <Card className="overflow-hidden border-0 shadow-sm hover:shadow-md transition-shadow h-full">
+                        <div className="h-48 w-full relative bg-muted">
+                          <Image
+                            src={project.image} 
+                            alt={project.title}
+                            fill
+                            className="object-cover"
+                          />
+                        </div>
+                        <CardHeader>
+                          <CardTitle>{project.title}</CardTitle>
+                        </CardHeader>
+                        <CardContent>
+                          <p className="text-sm text-muted-foreground mb-4">
+                            {project.description}
+                          </p>
+                          <div className="flex flex-wrap gap-1 mt-2">
+                            {project.technologies.map((tech: string, techIndex: number) => (
+                              <span key={techIndex} className="px-2 py-1 bg-secondary rounded-full text-xs">
+                                {tech}
+                              </span>
+                            ))}
+                          </div>
+                        </CardContent>
+                        <CardFooter>
+                          <Button variant="link" className="p-0">
+                            {tHome('projects.learnMore')} <ArrowRight className="ml-2 h-4 w-4" />
+                          </Button>
+                        </CardFooter>
+                      </Card>
+                    </Link>
+                  </motion.div>
                 ))}
               </CardContent>
               <CardFooter className="justify-center pt-6">

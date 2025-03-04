@@ -36,12 +36,14 @@
         "learnMore": "Learn More",
         "items": [
           {
+            "id": "she-pawn-shop",
             "title": "She Pawn Shop Management System",
             "description": "A comprehensive mobile application built with Expo and React Native for managing a family pawn shop business.",
             "image": "/images/she/home-1.png",
             "technologies": ["Expo", "React Native", "TypeScript", "Laravel"]
           },
           {
+            "id": "pomodoai",
             "title": "PomodoAI - Smart Productivity Timer",
             "description": "A modern Pomodoro timer application with AI-powered task generation to help users manage their time effectively.",
             "image": "/images/pomo/home.png",

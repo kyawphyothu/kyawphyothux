@@ -68,7 +68,13 @@ export default function ProjectsPage() {
         animate="show"
       >
         {projects.map((project: any, index: number) => (
-          <motion.div key={index} variants={item} transition={{ duration: 0.5 }}>
+          <motion.div 
+            id={`project-${project.id}`} 
+            key={index} 
+            variants={item} 
+            transition={{ duration: 0.5 }}
+            className="scroll-mt-20" // Add scroll margin to prevent navbar overlap
+          >
             <Card className="overflow-hidden hover:shadow-lg transition-shadow">
               <div className="md:flex">
                 {/* Left side: Screenshots */}
