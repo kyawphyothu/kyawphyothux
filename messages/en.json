@@ -1,0 +1,120 @@
+{
+    "navigation": {
+      "home": "Home",
+      "about": "About",
+      "projects": "Projects",
+      "contact": "Contact"
+    },
+    "hero": {
+      "name": "Kyaw Phyo Thu",
+      "role": "Software Engineer & Web Developer",
+      "cta": {
+        "viewProjects": "View Projects",
+        "contactMe": "Contact Me"
+      }
+    },
+    "home": {
+      "about": {
+        "title": "About Me",
+        "content": "I'm a passionate software engineer specializing in building exceptional digital experiences. With a strong foundation in modern web technologies, I create scalable and user-friendly applications that solve real-world problems.",
+        "learnMore": "Learn More"
+      },
+      "skills": {
+        "title": "Skills",
+        "list": ["React", "Next.js", "TypeScript", "Node.js", "Tailwind CSS", "Git"]
+      },
+      "projects": {
+        "title": "Featured Projects",
+        "viewAll": "View All Projects",
+        "learnMore": "Learn More",
+        "items": [
+          {
+            "title": "Project 1",
+            "description": "A brief description of the project and the technologies used."
+          },
+          {
+            "title": "Project 2",
+            "description": "A brief description of the project and the technologies used."
+          }
+        ]
+      }
+    },
+    "about": {
+      "title": "About Me",
+      "intro": {
+        "p1": "Hello! I'm Kyaw Phyo Thu, a passionate web and mobile developer specializing in JavaScript, TypeScript, PHP, Laravel, React, Next.js, and Expo. I build clean, efficient, and scalable applications, turning ideas into seamless digital experiences.",
+        "p2": "Since 2022, I've been crafting modern web applications at Poppa Technology, where I've honed my skills in both front-end and back-end development. I approach each project with a problem-solving mindset, looking for ways to optimize performance while maintaining clean, maintainable code.",
+        "p3": "What drives me is the continuous evolution of web and mobile technologies and the challenge of staying at the cutting edge. I enjoy working across the full stack to build dynamic, responsive interfaces that deliver exceptional user experiences across all devices."
+      },
+      "experience": {
+        "title": "Experience",
+        "items": [
+          {
+            "title": "Web Developer",
+            "company": "Poppa Technology",
+            "period": "2022 - Present",
+            "description": "Developing and maintaining modern web applications with React, Next.js, and TypeScript. Collaborating with cross-functional teams to deliver user-centered solutions and implementing responsive designs that work across all devices."
+          }
+        ]
+      },
+      "skills": {
+        "title": "Skills & Technologies"
+      },
+      "callToAction": {
+        "title": "Let's Build Something Together",
+        "p1": "I'm always open to new challenges and opportunities to collaborate on exciting projects. Whether you're looking to develop a new web application, enhance an existing one, or simply want to connect with a fellow developer, I'd love to hear from you.",
+        "p2": "Feel free to explore my projects and reach out through the contact page if you'd like to discuss how we might work together to bring your ideas to life."
+      }
+    },
+    "projects": {
+      "title": "My Projects",
+      "description": "Here's a showcase of my development work. Each project represents my approach to solving real-world problems through technology.",
+      "features": "Key Features:",
+      "technologies": "Technologies:",
+      "sourceCode": "Source Code",
+      "liveDemo": "Live Demo",
+      "comingSoon": {
+        "title": "More Projects Coming Soon",
+        "description": "I'm currently working on several new projects that will be showcased here soon. Feel free to check back later or contact me to learn more about my current work."
+      }
+    },
+    "contact": {
+      "title": "Get In Touch",
+      "description": "Have a project in mind or just want to say hello? I'd love to hear from you!",
+      "form": {
+        "title": "Send Me a Message",
+        "description": "Fill out the form below and I'll get back to you as soon as possible.",
+        "name": "Name",
+        "email": "Email",
+        "subject": "Subject",
+        "message": "Message",
+        "sendButton": "Send Message",
+        "sending": "Sending..."
+      },
+      "success": {
+        "title": "Message sent successfully!",
+        "description": "Thanks for reaching out. I'll get back to you soon."
+      },
+      "error": {
+        "title": "Failed to send message",
+        "description": "Please try again later."
+      },
+      "info": {
+        "email": {
+          "title": "Email",
+          "value": "kyawphyothukpt256@gmail.com"
+        },
+        "phone": {
+          "title": "Phone",
+          "value": "+95 9787977509"
+        },
+        "location": {
+          "title": "Location",
+          "value": "Hochiminh City, Vietnam"
+        }
+      }
+    },
+    "footer": {
+      "copyright": "© {year} Kyaw Phyo Thu. All rights reserved."
+    }
+  }

@@ -1,15 +1,19 @@
 "use client"
 
 import Image from "next/image";
-import Link from "next/link";
 import { motion } from "framer-motion";
 import { Card, CardHeader, CardTitle, CardContent, CardFooter } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
 import { ArrowRight } from "lucide-react";
 import { useEffect, useState } from "react";
+import { useTranslations } from 'next-intl';
+import { Link } from '@/i18n/navigation';
 
 export default function Home() {
+  const t = useTranslations();
+  const tHome = useTranslations('home');
+  const tHero = useTranslations('hero');
   const [windowHeight, setWindowHeight] = useState("100vh");
   
   // This effect handles the viewport height calculation for Safari
@@ -61,18 +65,18 @@ export default function Home() {
           {/* More explicit sizing for Safari compatibility */}
           <div className="relative mx-auto mb-8" style={{ width: '160px', height: '160px' }}>
             <Avatar className="w-full h-full border-4 border-primary/20">
-              <AvatarImage src="/images/profile.png" alt="Kyaw Phyo Thu" className="object-cover" />
+              <AvatarImage src="/images/profile.png" alt={tHero('name')} className="object-cover" />
               <AvatarFallback className="text-5xl">KP</AvatarFallback>
             </Avatar>
           </div>
-          <h1 className="text-4xl sm:text-6xl font-bold mb-4">Kyaw Phyo Thu</h1>
-          <p className="text-xl text-muted-foreground mb-8">Software Engineer & Web Developer</p>
+          <h1 className="text-4xl sm:text-6xl font-bold mb-4">{tHero('name')}</h1>
+          <p className="text-xl text-muted-foreground mb-8">{tHero('role')}</p>
           <div className="flex flex-wrap gap-4 justify-center">
             <Button asChild>
-              <Link href="/projects">View Projects</Link>
+              <Link href="/projects">{tHero('cta.viewProjects')}</Link>
             </Button>
             <Button variant="outline" asChild>
-              <Link href="/contact">Contact Me</Link>
+              <Link href="/contact">{tHero('cta.contactMe')}</Link>
             </Button>
           </div>
         </motion.div>
@@ -98,19 +102,17 @@ export default function Home() {
           <motion.div variants={item}>
             <Card className="h-full">
               <CardHeader>
-                <CardTitle className="text-2xl">About Me</CardTitle>
+                <CardTitle className="text-2xl">{tHome('about.title')}</CardTitle>
               </CardHeader>
               <CardContent>
                 <p className="leading-relaxed">
-                  I'm a passionate software engineer specializing in building exceptional digital experiences. 
-                  With a strong foundation in modern web technologies, I create scalable and user-friendly applications 
-                  that solve real-world problems.
+                  {tHome('about.content')}
                 </p>
               </CardContent>
               <CardFooter>
                 <Button variant="link" asChild className="p-0">
                   <Link href="/about">
-                    Learn More <ArrowRight className="ml-2 h-4 w-4" />
+                    {tHome('about.learnMore')} <ArrowRight className="ml-2 h-4 w-4" />
                   </Link>
                 </Button>
               </CardFooter>
@@ -121,11 +123,11 @@ export default function Home() {
           <motion.div variants={item}>
             <Card className="h-full">
               <CardHeader>
-                <CardTitle className="text-2xl">Skills</CardTitle>
+                <CardTitle className="text-2xl">{tHome('skills.title')}</CardTitle>
               </CardHeader>
               <CardContent>
                 <div className="flex flex-wrap gap-2">
-                  {["React", "Next.js", "TypeScript", "Node.js", "Tailwind CSS", "Git"].map((skill) => (
+                  {tHome.raw('skills.list').map((skill: string) => (
                     <span key={skill} className="px-3 py-1 bg-secondary rounded-full text-sm">
                       {skill}
                     </span>
@@ -139,24 +141,24 @@ export default function Home() {
           <motion.div variants={item} className="md:col-span-2">
             <Card>
               <CardHeader>
-                <CardTitle className="text-2xl">Featured Projects</CardTitle>
+                <CardTitle className="text-2xl">{tHome('projects.title')}</CardTitle>
               </CardHeader>
               <CardContent className="grid md:grid-cols-2 gap-4">
-                {[1, 2].map((project) => (
-                  <Card key={project} className="overflow-hidden">
+                {tHome.raw('projects.items').map((project: any, index: number) => (
+                  <Card key={index} className="overflow-hidden">
                     <div className="h-48 bg-muted"/>
                     <CardHeader>
-                      <CardTitle>Project {project}</CardTitle>
+                      <CardTitle>{project.title}</CardTitle>
                     </CardHeader>
                     <CardContent>
                       <p className="text-sm text-muted-foreground">
-                        A brief description of the project and the technologies used.
+                        {project.description}
                       </p>
                     </CardContent>
                     <CardFooter>
                       <Button variant="link" asChild className="p-0">
-                        <Link href={`/projects#project${project}`}>
-                          Learn More <ArrowRight className="ml-2 h-4 w-4" />
+                        <Link href={{ pathname: '/projects', hash: `project${index + 1}` }}>
+                          {tHome('projects.learnMore')} <ArrowRight className="ml-2 h-4 w-4" />
                         </Link>
                       </Button>
                     </CardFooter>
@@ -165,8 +167,8 @@ export default function Home() {
               </CardContent>
               <CardFooter className="justify-center pt-6">
                 <Button asChild>
-                  <Link href="/projects">
-                    View All Projects <ArrowRight className="ml-2 h-4 w-4" />
+                  <Link href={{ pathname: '/projects' }}>
+                    {tHome('projects.viewAll')} <ArrowRight className="ml-2 h-4 w-4" />
                   </Link>
                 </Button>
               </CardFooter>

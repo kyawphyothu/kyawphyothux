@@ -1,37 +1,44 @@
 "use client"
 
 import * as React from "react"
-import Link from "next/link"
-import { usePathname } from "next/navigation"
 import { motion } from "framer-motion"
 import { Menu, X } from "lucide-react"
+import { useTranslations, useLocale } from 'next-intl'
+import { Link, usePathname } from '@/i18n/navigation'
 
 import { cn } from "@/lib/utils"
 import { Button } from "@/components/ui/button"
 import { ThemeToggle } from "@/components/ui/theme-toggle"
+import { LanguageSwitcher } from "@/components/ui/language-switcher"
 
-const routes = [
-  {
-    href: "/",
-    label: "Home",
-  },
-  {
-    href: "/about",
-    label: "About",
-  },
-  {
-    href: "/projects",
-    label: "Projects",
-  },
-  {
-    href: "/contact",
-    label: "Contact",
-  },
-]
+type Route = {
+  href: "/about" | "/contact" | "/projects" | "/",
+  label: string
+}
 
 export function Navbar() {
   const pathname = usePathname()
   const [isOpen, setIsOpen] = React.useState(false)
+  const t = useTranslations('navigation')
+
+  const routes: Route[] = [
+    {
+      href: "/",
+      label: t('home'),
+    },
+    {
+      href: "/about",
+      label: t('about'),
+    },
+    {
+      href: "/projects",
+      label: t('projects'),
+    },
+    {
+      href: "/contact",
+      label: t('contact'),
+    },
+  ]
 
   return (
     <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
@@ -62,7 +69,10 @@ export function Navbar() {
               {route.label}
             </Link>
           ))}
-          <ThemeToggle />
+          <div className="flex items-center gap-2 pl-2">
+            <ThemeToggle />
+            <LanguageSwitcher />
+          </div>
         </nav>
 
         {/* Mobile Navigation Toggle */}
@@ -100,8 +110,9 @@ export function Navbar() {
                 {route.label}
               </Link>
             ))}
-            <div className="pt-2">
+            <div className="flex items-center gap-2 pt-2 px-2">
               <ThemeToggle />
+              <LanguageSwitcher />
             </div>
           </div>
         </motion.div>
