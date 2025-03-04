@@ -11,7 +11,7 @@ import { FaCode, FaDesktop, FaMobileAlt, FaServer, FaLayerGroup, FaTerminal, FaD
 
 export default function AboutPage() {
   const t = useTranslations('about');
-  
+
   const fadeIn = {
     hidden: { opacity: 0, y: 20 },
     visible: { opacity: 1, y: 0 }
@@ -85,7 +85,7 @@ export default function AboutPage() {
         animate="visible"
         variants={fadeIn}
         transition={{ duration: 0.5 }}
-        className="scroll-mt-20"
+        className="scroll-mt-28"
       >
         <h1 className="text-4xl font-bold mb-8">{t('title')}</h1>
         <div className="prose dark:prose-invert max-w-none">
@@ -132,7 +132,7 @@ export default function AboutPage() {
         animate="visible"
         variants={fadeIn}
         transition={{ duration: 0.5, delay: 0.3 }}
-        className="scroll-mt-20"
+        className="scroll-mt-28"
       >
         <h2 className="text-3xl font-bold mb-6">{t('skills.title')}</h2>
         

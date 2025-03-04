@@ -76,11 +76,11 @@ export default function Home() {
         >
           {/* About Section */}
           <motion.div variants={item}>
-            <Card className="h-full">
+            <Card className="h-full flex flex-col">
               <CardHeader>
                 <CardTitle className="text-2xl">{tHome('about.title')}</CardTitle>
               </CardHeader>
-              <CardContent className="space-y-4">
+              <CardContent className="space-y-4 flex-grow">
                 <p className="leading-relaxed">
                   {tHome('about.content')}
                 </p>
@@ -102,23 +102,11 @@ export default function Home() {
 
           {/* Skills Section */}
           <motion.div variants={item}>
-            <Card className="h-full">
+            <Card className="h-full flex flex-col">
               <CardHeader>
                 <CardTitle className="text-2xl">{tHome('skills.title')}</CardTitle>
               </CardHeader>
-              <CardContent className="space-y-6">
-                {/* Skill tags */}
-                {/* <div className="flex flex-wrap gap-2">
-                  {tHome.raw('skills.list').map((skill: string) => (
-                    <span 
-                      key={skill} 
-                      className="px-3 py-1 bg-secondary rounded-full text-sm hover:bg-primary/20 transition-colors duration-200 cursor-default"
-                    >
-                      {skill}
-                    </span>
-                  ))}
-                </div> */}
-                
+              <CardContent className="space-y-6 flex-grow">
                 {/* Featured skill categories */}
                 <div className="grid grid-cols-3 gap-4">
                   {tHome.raw('skills.featured')?.map((category: {name: string, icon: string}, index: number) => (
