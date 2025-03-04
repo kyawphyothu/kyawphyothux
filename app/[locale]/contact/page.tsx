@@ -8,8 +8,11 @@ import { Textarea } from "@/components/ui/textarea"
 import { Button } from "@/components/ui/button"
 import { Mail, MapPin, Phone } from "lucide-react"
 import { toast } from "sonner"
+import { useTranslations } from 'next-intl'
 
 export default function ContactPage() {
+  const t = useTranslations('contact')
+  
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -39,18 +42,18 @@ export default function ContactPage() {
       const data = await response.json();
       
       if (response.ok) {
-        toast.success("Message sent successfully!", {
-          description: "Thanks for reaching out. I'll get back to you soon.",
+        toast.success(t('success.title'), {
+          description: t('success.description'),
         });
         setFormData({ name: "", email: "", subject: "", message: "" });
       } else {
-        toast.error("Failed to send message", {
-          description: data.error || "Please try again later.",
+        toast.error(t('error.title'), {
+          description: data.error || t('error.description'),
         });
       }
     } catch (error) {
-      toast.error("An error occurred", {
-        description: "Unable to send your message. Please try again later.",
+      toast.error(t('error.title'), {
+        description: t('error.description'),
       });
       console.error('Submission error:', error);
     } finally {
@@ -58,23 +61,24 @@ export default function ContactPage() {
     }
   }
 
+  // Use contact info from translations
   const contactInfo = [
     {
       icon: <Mail className="h-6 w-6" />,
-      title: "Email",
-      value: "kyawphyothukpt256@gmail.com",
-      href: "mailto:kyawphyothukpt256@gmail.com"
+      titleKey: 'info.email.title',
+      valueKey: 'info.email.value',
+      href: `mailto:${t.raw('info.email.value')}`
     },
     {
       icon: <Phone className="h-6 w-6" />,
-      title: "Phone",
-      value: "+95 9787977509",
-      href: "tel:+959787977509"
+      titleKey: 'info.phone.title',
+      valueKey: 'info.phone.value',
+      href: `tel:+959787977509`
     },
     {
       icon: <MapPin className="h-6 w-6" />,
-      title: "Location",
-      value: "Hochiminh City, Vietnam",
+      titleKey: 'info.location.title',
+      valueKey: 'info.location.value',
       href: null
     }
   ]
@@ -93,9 +97,9 @@ export default function ContactPage() {
         transition={{ duration: 0.5 }}
         className="text-center mb-12"
       >
-        <h1 className="text-4xl font-bold mb-2">Get In Touch</h1>
+        <h1 className="text-4xl font-bold mb-2">{t('title')}</h1>
         <p className="text-muted-foreground max-w-xl mx-auto">
-          Have a project in mind or just want to say hello? I'd love to hear from you!
+          {t('description')}
         </p>
       </motion.div>
       
@@ -107,9 +111,9 @@ export default function ContactPage() {
         >
           <Card>
             <CardHeader>
-              <CardTitle>Send Me a Message</CardTitle>
+              <CardTitle>{t('form.title')}</CardTitle>
               <CardDescription>
-                Fill out the form below and I'll get back to you as soon as possible.
+                {t('form.description')}
               </CardDescription>
             </CardHeader>
             <CardContent>
@@ -117,12 +121,12 @@ export default function ContactPage() {
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <div className="space-y-2">
                     <label htmlFor="name" className="text-sm font-medium">
-                      Name
+                      {t('form.name')}
                     </label>
                     <Input
                       id="name"
                       name="name"
-                      placeholder="Your name"
+                      placeholder={t('form.name')}
                       value={formData.name}
                       onChange={handleChange}
                       required
@@ -130,13 +134,13 @@ export default function ContactPage() {
                   </div>
                   <div className="space-y-2">
                     <label htmlFor="email" className="text-sm font-medium">
-                      Email
+                      {t('form.email')}
                     </label>
                     <Input
                       id="email"
                       name="email"
                       type="email"
-                      placeholder="Your email"
+                      placeholder={t('form.email')}
                       value={formData.email}
                       onChange={handleChange}
                       required
@@ -146,12 +150,12 @@ export default function ContactPage() {
 
                 <div className="space-y-2">
                   <label htmlFor="subject" className="text-sm font-medium">
-                    Subject
+                    {t('form.subject')}
                   </label>
                   <Input
                     id="subject"
                     name="subject"
-                    placeholder="Subject of your message"
+                    placeholder={t('form.subject')}
                     value={formData.subject}
                     onChange={handleChange}
                     required
@@ -160,12 +164,12 @@ export default function ContactPage() {
 
                 <div className="space-y-2">
                   <label htmlFor="message" className="text-sm font-medium">
-                    Message
+                    {t('form.message')}
                   </label>
                   <Textarea
                     id="message"
                     name="message"
-                    placeholder="Your message..."
+                    placeholder={t('form.message')}
                     rows={5}
                     value={formData.message}
                     onChange={handleChange}
@@ -174,7 +178,7 @@ export default function ContactPage() {
                 </div>
 
                 <Button type="submit" className="w-full" disabled={isSubmitting}>
-                  {isSubmitting ? "Sending..." : "Send Message"}
+                  {isSubmitting ? t('form.sending') : t('form.sendButton')}
                 </Button>
               </form>
             </CardContent>
@@ -193,16 +197,16 @@ export default function ContactPage() {
                   {item.icon}
                 </div>
                 <div className="min-w-0">
-                  <h3 className="font-medium">{item.title}</h3>
+                  <h3 className="font-medium">{t(item.titleKey)}</h3>
                   {item.href ? (
                     <a 
                       href={item.href} 
                       className="text-muted-foreground hover:text-primary transition-colors break-all"
                     >
-                      {item.value}
+                      {t(item.valueKey)}
                     </a>
                   ) : (
-                    <p className="text-muted-foreground">{item.value}</p>
+                    <p className="text-muted-foreground">{t(item.valueKey)}</p>
                   )}
                 </div>
               </CardContent>
