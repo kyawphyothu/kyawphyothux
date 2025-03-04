@@ -14,6 +14,11 @@ import {routing} from '@/i18n/routing';
 
 const inter = Inter({ subsets: ["latin"] })
 
+// Add this function to generate static paths for all locales
+// export function generateStaticParams() {
+//   return routing.locales.map((locale) => ({ locale }));
+// }
+
 export const metadata: Metadata = {
   metadataBase: new URL('https://kyawphyothu.com'),
   title: "Kyaw Phyo Thu - Software Engineer & Web Developer",

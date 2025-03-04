@@ -8,6 +8,10 @@ import { Link } from '@/i18n/navigation';
 import { FaDatabase, FaDesktop, FaServer } from 'react-icons/fa';
 import Image from 'next/image';
 
+// Add this to make the page static
+// export const dynamic = 'force-static';
+// export const revalidate = false; // Never revalidate unless manually rebuilt
+
 export default function Home() {
   const tHome = useTranslations('home');
   const tHero = useTranslations('hero');

@@ -2,13 +2,16 @@ import * as motion from "motion/react-client"
 import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card"
 import { useTranslations } from 'next-intl';
 import {
-  SiReact, SiNextdotjs, SiTypescript, SiJavascript, SiHtml5,
-  SiCss3, SiTailwindcss, SiNodedotjs, SiGit, SiPhp, SiLaravel,
-  SiExpo, SiApollographql, SiRedux, SiMysql, SiMongodb, SiPostgresql,
+  SiReact, SiNextdotjs, SiTypescript, SiJavascript,
+  SiTailwindcss, SiNodedotjs, SiGit, SiPhp, SiLaravel,
+  SiExpo, SiMysql, SiMongodb,
   SiDocker, SiLinux, SiGnubash, SiGnometerminal, SiUbuntu, SiSqlite
 } from "react-icons/si"
-import { FaCode, FaDesktop, FaMobileAlt, FaServer, FaLayerGroup, FaTerminal, FaDatabase } from "react-icons/fa"
+import { FaDesktop, FaMobileAlt, FaServer, FaLayerGroup, FaTerminal, FaDatabase } from "react-icons/fa"
 import ReactMarkdown from 'react-markdown';
+
+// export const dynamic = 'force-static';
+// export const revalidate = false;
 
 export default function AboutPage() {
   const t = useTranslations('about');

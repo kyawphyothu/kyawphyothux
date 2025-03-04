@@ -9,9 +9,11 @@ import {
   CardFooter 
 } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
-import { Github, ExternalLink, BarChart2, Clock, DollarSign, Database, Users, RefreshCw, Sparkles, ListChecks, LineChart } from "lucide-react"
+import { Github, ExternalLink, BarChart2, Clock, DollarSign, Database, Sparkles, ListChecks, LineChart } from "lucide-react"
 import { useTranslations } from 'next-intl'
-import { Link } from '@/i18n/navigation'
+
+// export const dynamic = 'force-static';
+// export const revalidate = false;
 
 export default function ProjectsPage() {
   const t = useTranslations('projects')

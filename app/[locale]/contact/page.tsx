@@ -4,6 +4,9 @@ import { Mail, MapPin, Phone } from "lucide-react"
 import { getTranslations } from 'next-intl/server'
 import ContactForm from './contact-form'
 
+// export const dynamic = 'force-static';
+// export const revalidate = false;
+
 export default async function ContactPage() {
   const t = await getTranslations('contact')
   

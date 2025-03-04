@@ -3,7 +3,7 @@
 import * as React from "react"
 import { motion } from "framer-motion"
 import { Menu, X } from "lucide-react"
-import { useTranslations, useLocale } from 'next-intl'
+import { useTranslations } from 'next-intl'
 import { Link, usePathname } from '@/i18n/navigation'
 
 import { cn } from "@/lib/utils"
