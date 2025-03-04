@@ -6,9 +6,9 @@ import {
   SiReact, SiNextdotjs, SiTypescript, SiJavascript, SiHtml5,
   SiCss3, SiTailwindcss, SiNodedotjs, SiGit, SiPhp, SiLaravel,
   SiExpo, SiApollographql, SiRedux, SiMysql, SiMongodb, SiPostgresql,
-  SiDocker, SiLinux, SiGnubash, SiGnometerminal, SiUbuntu
+  SiDocker, SiLinux, SiGnubash, SiGnometerminal, SiUbuntu, SiSqlite
 } from "react-icons/si"
-import { FaCode, FaDesktop, FaMobileAlt, FaServer, FaLayerGroup, FaTerminal } from "react-icons/fa"
+import { FaCode, FaDesktop, FaMobileAlt, FaServer, FaLayerGroup, FaTerminal, FaDatabase } from "react-icons/fa"
 
 export default function AboutPage() {
   const fadeIn = {
@@ -45,6 +45,15 @@ export default function AboutPage() {
         { name: "PHP", icon: <SiPhp className="text-[#777BB4]" /> },
         { name: "Laravel", icon: <SiLaravel className="text-[#FF2D20]" /> },
         { name: "REST APIs", icon: <FaServer className="text-purple-500" /> },
+      ]
+    },
+    {
+      name: "Databases",
+      icon: <FaDatabase className="text-blue-500" />,
+      skills: [
+        { name: "MySQL", icon: <SiMysql className="text-[#4479A1]" /> },
+        { name: "MongoDB", icon: <SiMongodb className="text-[#47A248]" /> },
+        { name: "SQLite", icon: <SiSqlite className="text-[#003B57]" /> },
       ]
     },
     {
