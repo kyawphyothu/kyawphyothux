@@ -7,6 +7,7 @@ import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
 import { Button } from "@/components/ui/button"
 import { Mail, MapPin, Phone } from "lucide-react"
+import { toast } from "sonner"
 
 export default function ContactPage() {
   const [formData, setFormData] = useState({
@@ -16,7 +17,6 @@ export default function ContactPage() {
     message: ""
   })
   const [isSubmitting, setIsSubmitting] = useState(false)
-  const [submitSuccess, setSubmitSuccess] = useState(false)
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target
@@ -27,15 +27,35 @@ export default function ContactPage() {
     e.preventDefault()
     setIsSubmitting(true)
     
-    // Simulate form submission
-    await new Promise(resolve => setTimeout(resolve, 1000))
-    
-    setIsSubmitting(false)
-    setSubmitSuccess(true)
-    setFormData({ name: "", email: "", subject: "", message: "" })
-    
-    // Reset success message after 5 seconds
-    setTimeout(() => setSubmitSuccess(false), 5000)
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
+      
+      const data = await response.json();
+      
+      if (response.ok) {
+        toast.success("Message sent successfully!", {
+          description: "Thanks for reaching out. I'll get back to you soon.",
+        });
+        setFormData({ name: "", email: "", subject: "", message: "" });
+      } else {
+        toast.error("Failed to send message", {
+          description: data.error || "Please try again later.",
+        });
+      }
+    } catch (error) {
+      toast.error("An error occurred", {
+        description: "Unable to send your message. Please try again later.",
+      });
+      console.error('Submission error:', error);
+    } finally {
+      setIsSubmitting(false);
+    }
   }
 
   const contactInfo = [
@@ -156,16 +176,6 @@ export default function ContactPage() {
                 <Button type="submit" className="w-full" disabled={isSubmitting}>
                   {isSubmitting ? "Sending..." : "Send Message"}
                 </Button>
-
-                {submitSuccess && (
-                  <motion.p
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
-                    className="text-center text-green-600 dark:text-green-400 mt-2"
-                  >
-                    Message sent successfully!
-                  </motion.p>
-                )}
               </form>
             </CardContent>
           </Card>
