@@ -8,6 +8,7 @@ import {
   SiDocker, SiLinux, SiGnubash, SiGnometerminal, SiUbuntu, SiSqlite
 } from "react-icons/si"
 import { FaCode, FaDesktop, FaMobileAlt, FaServer, FaLayerGroup, FaTerminal, FaDatabase } from "react-icons/fa"
+import ReactMarkdown from 'react-markdown';
 
 export default function AboutPage() {
   const t = useTranslations('about');
@@ -88,16 +89,22 @@ export default function AboutPage() {
         className="scroll-mt-28"
       >
         <h1 className="text-4xl font-bold mb-8">{t('title')}</h1>
-        <div className="prose dark:prose-invert max-w-none">
-          <p className="text-lg">
+        <div className="prose dark:prose-invert max-w-none space-y-4">
+          <ReactMarkdown components={{
+            p: ({node, ...props}) => <p className="text-lg" {...props} />
+          }}>
             {t('intro.p1')}
-          </p>
-          <p className="text-lg">
+          </ReactMarkdown>
+          <ReactMarkdown components={{
+            p: ({node, ...props}) => <p className="text-lg" {...props} />
+          }}>
             {t('intro.p2')}
-          </p>
-          <p className="text-lg">
+          </ReactMarkdown>
+          <ReactMarkdown components={{
+            p: ({node, ...props}) => <p className="text-lg" {...props} />
+          }}>
             {t('intro.p3')}
-          </p>
+          </ReactMarkdown>
         </div>
       </motion.div>
 

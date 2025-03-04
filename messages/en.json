@@ -55,9 +55,9 @@
     "about": {
       "title": "About Me",
       "intro": {
-        "p1": "Hello! I'm Kyaw Phyo Thu, a passionate web and mobile developer specializing in JavaScript, TypeScript, PHP, Laravel, React, Next.js, and Expo. I build clean, efficient, and scalable applications, turning ideas into seamless digital experiences.",
-        "p2": "Since 2022, I've been crafting modern web applications at Poppa Technology, where I've honed my skills in both front-end and back-end development. I approach each project with a problem-solving mindset, looking for ways to optimize performance while maintaining clean, maintainable code.",
-        "p3": "What drives me is the continuous evolution of web and mobile technologies and the challenge of staying at the cutting edge. I enjoy working across the full stack to build dynamic, responsive interfaces that deliver exceptional user experiences across all devices."
+        "p1": "Hello! I'm Kyaw Phyo Thu, a passionate **web and mobile developer** specializing in JavaScript, TypeScript, PHP, Laravel, React, Next.js, and Expo. I build clean, efficient, and scalable applications, turning ideas into seamless digital experiences.",
+        "p2": "Since 2022, I've been crafting **modern web applications** at Poppa Technology, where I've honed my skills in both **front-end and back-end development**. I approach each project with a problem-solving mindset, looking for ways to optimize performance while maintaining clean, maintainable code.",
+        "p3": "What drives me is the **continuous evolution** of web and mobile technologies and the challenge of staying at the cutting edge. I enjoy working across the **full stack** to build dynamic, responsive interfaces that deliver exceptional user experiences across all devices."
       },
       "experience": {
         "title": "Experience",
