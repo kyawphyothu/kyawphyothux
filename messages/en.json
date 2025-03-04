@@ -18,7 +18,7 @@
         "title": "About Me",
         "content": "I'm a passionate software engineer specializing in building exceptional digital experiences. With a strong foundation in modern web technologies, I create scalable and user-friendly applications that solve real-world problems.",
         "experience": "With experience in building web and mobile applications since 2022, I specialize in JavaScript, React, and TypeScript.",
-        "learnMore": "Learn More"
+        "learnMore": "Read My Full Story"
       },
       "skills": {
         "title": "Skills",
@@ -28,12 +28,12 @@
           { "name": "Backend", "icon": "FaServer" },
           { "name": "Database", "icon": "FaDatabase" }
         ],
-        "viewAll": "View All Skills"
+        "viewAll": "Explore All My Skills"
       },
       "projects": {
         "title": "Featured Projects",
-        "viewAll": "View All Projects",
-        "learnMore": "Learn More",
+        "viewAll": "Browse All Projects",
+        "learnMore": "View Project Details",
         "items": [
           {
             "id": "she-pawn-shop",
