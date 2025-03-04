@@ -1,38 +1,14 @@
-"use client"
-
-import Image from "next/image";
-import { motion } from "framer-motion";
+import * as motion from 'motion/react-client'
 import { Card, CardHeader, CardTitle, CardContent, CardFooter } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
 import { ArrowRight } from "lucide-react";
-import { useEffect, useState } from "react";
 import { useTranslations } from 'next-intl';
 import { Link } from '@/i18n/navigation';
 
 export default function Home() {
-  const t = useTranslations();
   const tHome = useTranslations('home');
   const tHero = useTranslations('hero');
-  const [windowHeight, setWindowHeight] = useState("100vh");
-  
-  // This effect handles the viewport height calculation for Safari
-  useEffect(() => {
-    // Set the initial height
-    const setHeight = () => {
-      const vh = window.innerHeight * 0.01;
-      document.documentElement.style.setProperty('--vh', `${vh}px`);
-      setWindowHeight(`calc(100 * var(--vh, 1vh) - 4rem)`);
-    };
-    
-    setHeight();
-    
-    // Update the height on resize
-    window.addEventListener('resize', setHeight);
-    
-    // Cleanup
-    return () => window.removeEventListener('resize', setHeight);
-  }, []);
 
   const container = {
     hidden: { opacity: 0 },
@@ -53,8 +29,7 @@ export default function Home() {
     <div className="min-h-screen bg-gradient-to-b from-background to-secondary/20">
       {/* Hero Section */}
       <section 
-        className="flex flex-col justify-center items-center relative p-8"
-        style={{ minHeight: windowHeight }}
+        className="flex flex-col justify-center items-center relative p-8 min-h-[calc(100vh-4rem)]"
       >
         <motion.div
           initial={{ opacity: 0, y: 20 }}

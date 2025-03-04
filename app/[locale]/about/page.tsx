@@ -1,6 +1,4 @@
-"use client"
-
-import { motion } from "framer-motion"
+import * as motion from "motion/react-client"
 import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card"
 import { useTranslations } from 'next-intl';
 import {
