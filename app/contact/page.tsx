@@ -42,19 +42,19 @@ export default function ContactPage() {
     {
       icon: <Mail className="h-6 w-6" />,
       title: "Email",
-      value: "your.email@example.com",
-      href: "mailto:your.email@example.com"
+      value: "kyawphyothukpt256@gmail.com",
+      href: "mailto:kyawphyothukpt256@gmail.com"
     },
     {
       icon: <Phone className="h-6 w-6" />,
       title: "Phone",
-      value: "+1 (555) 123-4567",
-      href: "tel:+15551234567"
+      value: "+95 9787977509",
+      href: "tel:+959787977509"
     },
     {
       icon: <MapPin className="h-6 w-6" />,
       title: "Location",
-      value: "San Francisco, CA",
+      value: "Hochiminh City, Vietnam",
       href: null
     }
   ]
@@ -178,16 +178,16 @@ export default function ContactPage() {
         >
           {contactInfo.map((item, index) => (
             <Card key={index}>
-              <CardContent className="flex items-center gap-4 p-6">
-                <div className="rounded-full p-3 bg-primary/10 text-primary">
+              <CardContent className="flex items-start sm:items-center gap-4 p-6">
+                <div className="rounded-full p-3 bg-primary/10 text-primary shrink-0">
                   {item.icon}
                 </div>
-                <div>
+                <div className="min-w-0">
                   <h3 className="font-medium">{item.title}</h3>
                   {item.href ? (
                     <a 
                       href={item.href} 
-                      className="text-muted-foreground hover:text-primary transition-colors"
+                      className="text-muted-foreground hover:text-primary transition-colors break-all"
                     >
                       {item.value}
                     </a>
