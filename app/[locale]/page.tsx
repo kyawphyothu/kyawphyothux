@@ -6,6 +6,7 @@ import { ArrowRight } from "lucide-react";
 import { useTranslations } from 'next-intl';
 import { Link } from '@/i18n/navigation';
 import { FaDatabase, FaDesktop, FaServer } from 'react-icons/fa';
+import Image from 'next/image';
 
 export default function Home() {
   const tHome = useTranslations('home');
@@ -141,21 +142,35 @@ export default function Home() {
               <CardHeader>
                 <CardTitle className="text-2xl">{tHome('projects.title')}</CardTitle>
               </CardHeader>
-              <CardContent className="grid md:grid-cols-2 gap-4">
+              <CardContent className="grid md:grid-cols-2 gap-6">
                 {tHome.raw('projects.items').map((project: any, index: number) => (
-                  <Card key={index} className="overflow-hidden">
-                    <div className="h-48 bg-muted"/>
+                  <Card key={index} className="overflow-hidden border-0 shadow-sm hover:shadow-md transition-shadow">
+                    <div className="h-48 w-full relative bg-muted">
+                      <Image
+                        src={project.image} 
+                        alt={project.title}
+                        fill
+                        className="object-cover"
+                      />
+                    </div>
                     <CardHeader>
                       <CardTitle>{project.title}</CardTitle>
                     </CardHeader>
                     <CardContent>
-                      <p className="text-sm text-muted-foreground">
+                      <p className="text-sm text-muted-foreground mb-4">
                         {project.description}
                       </p>
+                      <div className="flex flex-wrap gap-1 mt-2">
+                        {project.technologies.map((tech: string, techIndex: number) => (
+                          <span key={techIndex} className="px-2 py-1 bg-secondary rounded-full text-xs">
+                            {tech}
+                          </span>
+                        ))}
+                      </div>
                     </CardContent>
                     <CardFooter>
                       <Button variant="link" asChild className="p-0">
-                        <Link href={{ pathname: '/projects', hash: `project${index + 1}` }}>
+                        <Link href={{ pathname: '/projects' }}>
                           {tHome('projects.learnMore')} <ArrowRight className="ml-2 h-4 w-4" />
                         </Link>
                       </Button>

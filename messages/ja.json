@@ -36,12 +36,16 @@
         "learnMore": "詳細を見る",
         "items": [
           {
-            "title": "プロジェクト 1",
-            "description": "プロジェクトと使用技術の簡単な説明。"
+            "title": "シー質店管理システム",
+            "description": "家族経営の質店ビジネスを管理するためのExpoとReact Nativeで構築された包括的なモバイルアプリケーション。",
+            "image": "/images/she/home-1.png",
+            "technologies": ["Expo", "React Native", "TypeScript", "Laravel"]
           },
           {
-            "title": "プロジェクト 2",
-            "description": "プロジェクトと使用技術の簡単な説明。"
+            "title": "ポモドAI - スマート生産性タイマー",
+            "description": "AI搭載のタスク生成機能を備えた現代的なポモドーロタイマーアプリケーション。",
+            "image": "/images/pomo/home.png",
+            "technologies": ["Next.js", "TypeScript", "shadcn/ui", "ChatGPT API"]
           }
         ]
       }
