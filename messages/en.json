@@ -69,14 +69,54 @@
     "projects": {
       "title": "My Projects",
       "description": "Here's a showcase of my development work. Each project represents my approach to solving real-world problems through technology.",
-      "features": "Key Features:",
-      "technologies": "Technologies:",
+      "features": "Key Features",
+      "technologies": "Technologies",
       "sourceCode": "Source Code",
       "liveDemo": "Live Demo",
       "comingSoon": {
         "title": "More Projects Coming Soon",
         "description": "I'm currently working on several new projects that will be showcased here soon. Feel free to check back later or contact me to learn more about my current work."
-      }
+      },
+      "projectItems": [
+        {
+          "title": "She Pawn Shop Management System",
+          "description": "A comprehensive mobile application built with Expo and React Native for managing a family pawn shop business. This app handles inventory tracking, financial management, and reporting.",
+          "type": "mobile",
+          "tags": ["Expo", "React Native", "TypeScript", "Laravel", "RESTful API", "Financial Management"],
+          "features": [
+            { "name": "Daily Transaction History", "icon": "dailyTransactionHistory" },
+            { "name": "Gold Inventory Tracking", "icon": "goldInventoryTracking" },
+            { "name": "Cash Flow Management", "icon": "cashFlowManagement" },
+            { "name": "Profit Analytics", "icon": "profitAnalytics" }
+          ],
+          "screenshots": [
+            { "src": "/images/she/home-1.png", "alt": "She Pawn Shop Home Screen" },
+            { "src": "/images/she/daily-history.png", "alt": "Daily History Screen" },
+            { "src": "/images/she/orders.png", "alt": "Orders Screen" }
+          ],
+          "github": "#",
+          "demo": "#"
+        },
+        {
+          "title": "PomodoAI - Smart Productivity Timer",
+          "description": "A modern Pomodoro timer application with AI-powered task generation. This web app helps users manage their time effectively while leveraging AI to create and organize tasks based on natural language prompts.",
+          "type": "web",
+          "tags": ["Next.js", "TypeScript", "shadcn/ui", "Laravel", "ChatGPT API", "Productivity"],
+          "features": [
+            { "name": "Customizable Pomodoro Timer", "icon": "customizableTimer" },
+            { "name": "AI Task Generation", "icon": "aiTaskGeneration" },
+            { "name": "Task Management", "icon": "taskManagement" },
+            { "name": "Productivity Analytics", "icon": "productivityAnalytics" }
+          ],
+          "screenshots": [
+            { "src": "/images/pomo/home.png", "alt": "PomodoAI Dashboard" },
+            { "src": "/images/pomodoro/timer.png", "alt": "Active Timer" },
+            { "src": "/images/pomodoro/ai-task.png", "alt": "AI Task Creation" }
+          ],
+          "github": "#",
+          "demo": "https://pomoxx.kyawphyothu.com"
+        }
+      ]
     },
     "contact": {
       "title": "Get In Touch",

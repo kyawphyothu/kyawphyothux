@@ -69,14 +69,54 @@
     "projects": {
       "title": "プロジェクト",
       "description": "私の開発作品のショーケースです。各プロジェクトは、技術を通じて実世界の問題を解決するための私のアプローチを表しています。",
-      "features": "主な機能：",
-      "technologies": "使用技術：",
+      "features": "主な機能",
+      "technologies": "使用技術",
       "sourceCode": "ソースコード",
       "liveDemo": "実際のデモ",
       "comingSoon": {
         "title": "新しいプロジェクト準備中",
         "description": "現在、近日中にここで紹介される予定のいくつかの新しいプロジェクトに取り組んでいます。後でまた確認するか、私の現在の仕事についてもっと知りたい場合はお問い合わせください。"
-      }
+      },
+      "projectItems": [
+        {
+          "title": "シー質店管理システム",
+          "description": "家族経営の質店ビジネスを管理するためのExpoとReact Nativeで構築された包括的なモバイルアプリケーション。このアプリは在庫管理、財務管理、レポートを処理します。",
+          "type": "mobile",
+          "tags": ["Expo", "React Native", "TypeScript", "Laravel", "RESTful API", "財務管理"],
+          "features": [
+            { "name": "日次取引履歴", "icon": "dailyTransactionHistory" },
+            { "name": "金在庫追跡", "icon": "goldInventoryTracking" },
+            { "name": "キャッシュフロー管理", "icon": "cashFlowManagement" },
+            { "name": "収益分析", "icon": "profitAnalytics" }
+          ],
+          "screenshots": [
+            { "src": "/images/she/home-1.png", "alt": "シー質店ホーム画面" },
+            { "src": "/images/she/daily-history.png", "alt": "日次履歴画面" },
+            { "src": "/images/she/orders.png", "alt": "注文画面" }
+          ],
+          "github": "#",
+          "demo": "#"
+        },
+        {
+          "title": "ポモドAI - スマート生産性タイマー",
+          "description": "AI搭載のタスク生成機能を備えた現代的なポモドーロタイマーアプリケーション。このウェブアプリは、AIを活用して自然言語プロンプトに基づいてタスクを作成・整理しながら、ユーザーが時間を効果的に管理するのを支援します。",
+          "type": "web",
+          "tags": ["Next.js", "TypeScript", "shadcn/ui", "Laravel", "ChatGPT API", "生産性"],
+          "features": [
+            { "name": "カスタマイズ可能なポモドーロタイマー", "icon": "customizableTimer" },
+            { "name": "AIタスク生成", "icon": "aiTaskGeneration" },
+            { "name": "タスク管理", "icon": "taskManagement" },
+            { "name": "生産性分析", "icon": "productivityAnalytics" }
+          ],
+          "screenshots": [
+            { "src": "/images/pomo/home.png", "alt": "ポモドAIダッシュボード" },
+            { "src": "/images/pomodoro/timer.png", "alt": "アクティブタイマー" },
+            { "src": "/images/pomodoro/ai-task.png", "alt": "AIタスク作成" }
+          ],
+          "github": "#",
+          "demo": "https://pomoxx.kyawphyothu.com"
+        }
+      ]
     },
     "contact": {
       "title": "お問い合わせ",
