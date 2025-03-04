@@ -5,6 +5,7 @@ import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
 import { ArrowRight } from "lucide-react";
 import { useTranslations } from 'next-intl';
 import { Link } from '@/i18n/navigation';
+import { FaDatabase, FaDesktop, FaServer } from 'react-icons/fa';
 
 export default function Home() {
   const tHome = useTranslations('home');
@@ -79,10 +80,15 @@ export default function Home() {
               <CardHeader>
                 <CardTitle className="text-2xl">{tHome('about.title')}</CardTitle>
               </CardHeader>
-              <CardContent>
+              <CardContent className="space-y-4">
                 <p className="leading-relaxed">
                   {tHome('about.content')}
                 </p>
+                <div className="prose dark:prose-invert max-w-none">
+                  <p className="text-sm text-muted-foreground">
+                    {tHome('about.experience')}
+                  </p>
+                </div>
               </CardContent>
               <CardFooter>
                 <Button variant="link" asChild className="p-0">
@@ -100,7 +106,7 @@ export default function Home() {
               <CardHeader>
                 <CardTitle className="text-2xl">{tHome('skills.title')}</CardTitle>
               </CardHeader>
-              <CardContent>
+              <CardContent className="space-y-4">
                 <div className="flex flex-wrap gap-2">
                   {tHome.raw('skills.list').map((skill: string) => (
                     <span key={skill} className="px-3 py-1 bg-secondary rounded-full text-sm">
@@ -108,7 +114,27 @@ export default function Home() {
                     </span>
                   ))}
                 </div>
+                
+                <div className="grid grid-cols-3 gap-2 mt-3">
+                  {tHome.raw('skills.featured')?.map((category: {name: string, icon: string}, index: number) => (
+                    <div key={index} className="text-center">
+                      <div className="flex justify-center mb-1">
+                        {category.icon === 'FaDesktop' && <FaDesktop className="text-blue-500 text-xl" />}
+                        {category.icon === 'FaServer' && <FaServer className="text-purple-500 text-xl" />}
+                        {category.icon === 'FaDatabase' && <FaDatabase className="text-blue-500 text-xl" />}
+                      </div>
+                      <span className="text-xs font-medium">{category.name}</span>
+                    </div>
+                  ))}
+                </div>
               </CardContent>
+              <CardFooter>
+                <Button variant="link" asChild className="p-0">
+                  <Link href="/about">
+                    {tHome('skills.viewAll')} <ArrowRight className="ml-2 h-4 w-4" />
+                  </Link>
+                </Button>
+              </CardFooter>
             </Card>
           </motion.div>
 

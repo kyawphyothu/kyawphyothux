@@ -17,11 +17,18 @@
       "about": {
         "title": "自己紹介",
         "content": "私は優れたデジタル体験の構築を専門とする情熱的なソフトウェアエンジニアです。最新のウェブ技術に強い基盤を持ち、実世界の問題を解決するスケーラブルでユーザーフレンドリーなアプリケーションを作成しています。",
+        "experience": "2022年からウェブおよびモバイルアプリケーションの構築経験があり、JavaScript、React、TypeScriptを専門としています。",
         "learnMore": "詳細を見る"
       },
       "skills": {
         "title": "スキル",
-        "list": ["React", "Next.js", "TypeScript", "Node.js", "Tailwind CSS", "Git"]
+        "list": ["React", "Next.js", "TypeScript", "Node.js", "Tailwind CSS", "Git"],
+        "featured": [
+          { "name": "フロントエンド", "icon": "FaDesktop" },
+          { "name": "バックエンド", "icon": "FaServer" },
+          { "name": "データベース", "icon": "FaDatabase" }
+        ],
+        "viewAll": "すべてのスキルを見る"
       },
       "projects": {
         "title": "注目プロジェクト",
