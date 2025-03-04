@@ -80,10 +80,12 @@ export default function AboutPage() {
     <div className="container max-w-5xl mx-auto py-12 px-4 sm:px-6 lg:px-8 space-y-12">
       {/* About Me section */}
       <motion.div
+        id="about"
         initial="hidden"
         animate="visible"
         variants={fadeIn}
         transition={{ duration: 0.5 }}
+        className="scroll-mt-20"
       >
         <h1 className="text-4xl font-bold mb-8">{t('title')}</h1>
         <div className="prose dark:prose-invert max-w-none">
@@ -125,10 +127,12 @@ export default function AboutPage() {
 
       {/* Categorized Skills section */}
       <motion.div
+        id="skills"
         initial="hidden"
         animate="visible"
         variants={fadeIn}
         transition={{ duration: 0.5, delay: 0.3 }}
+        className="scroll-mt-20"
       >
         <h2 className="text-3xl font-bold mb-6">{t('skills.title')}</h2>
         

@@ -92,7 +92,7 @@ export default function Home() {
               </CardContent>
               <CardFooter>
                 <Button variant="link" asChild className="p-0">
-                  <Link href="/about">
+                  <Link href={{ pathname: '/about', hash: "about" }}>
                     {tHome('about.learnMore')} <ArrowRight className="ml-2 h-4 w-4" />
                   </Link>
                 </Button>
@@ -106,31 +106,40 @@ export default function Home() {
               <CardHeader>
                 <CardTitle className="text-2xl">{tHome('skills.title')}</CardTitle>
               </CardHeader>
-              <CardContent className="space-y-4">
-                <div className="flex flex-wrap gap-2">
+              <CardContent className="space-y-6">
+                {/* Skill tags */}
+                {/* <div className="flex flex-wrap gap-2">
                   {tHome.raw('skills.list').map((skill: string) => (
-                    <span key={skill} className="px-3 py-1 bg-secondary rounded-full text-sm">
+                    <span 
+                      key={skill} 
+                      className="px-3 py-1 bg-secondary rounded-full text-sm hover:bg-primary/20 transition-colors duration-200 cursor-default"
+                    >
                       {skill}
                     </span>
                   ))}
-                </div>
+                </div> */}
                 
-                <div className="grid grid-cols-3 gap-2 mt-3">
+                {/* Featured skill categories */}
+                <div className="grid grid-cols-3 gap-4">
                   {tHome.raw('skills.featured')?.map((category: {name: string, icon: string}, index: number) => (
-                    <div key={index} className="text-center">
-                      <div className="flex justify-center mb-1">
-                        {category.icon === 'FaDesktop' && <FaDesktop className="text-blue-500 text-xl" />}
-                        {category.icon === 'FaServer' && <FaServer className="text-purple-500 text-xl" />}
-                        {category.icon === 'FaDatabase' && <FaDatabase className="text-blue-500 text-xl" />}
+                    <motion.div 
+                      key={index} 
+                      className="flex flex-col items-center p-3 rounded-lg bg-card border hover:shadow-md transition-all duration-200"
+                      whileHover={{ y: -5 }}
+                    >
+                      <div className="flex justify-center items-center h-10 w-10 rounded-full bg-secondary mb-2">
+                        {category.icon === 'FaDesktop' && <FaDesktop className="text-blue-500 text-lg" />}
+                        {category.icon === 'FaServer' && <FaServer className="text-purple-500 text-lg" />}
+                        {category.icon === 'FaDatabase' && <FaDatabase className="text-green-500 text-lg" />}
                       </div>
-                      <span className="text-xs font-medium">{category.name}</span>
-                    </div>
+                      <span className="text-sm font-medium text-center">{category.name}</span>
+                    </motion.div>
                   ))}
                 </div>
               </CardContent>
               <CardFooter>
                 <Button variant="link" asChild className="p-0">
-                  <Link href="/about">
+                  <Link href={{ pathname: '/about', hash: 'skills' }}>
                     {tHome('skills.viewAll')} <ArrowRight className="ml-2 h-4 w-4" />
                   </Link>
                 </Button>
