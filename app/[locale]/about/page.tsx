@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion"
 import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card"
+import { useTranslations } from 'next-intl';
 import {
   SiReact, SiNextdotjs, SiTypescript, SiJavascript, SiHtml5,
   SiCss3, SiTailwindcss, SiNodedotjs, SiGit, SiPhp, SiLaravel,
@@ -11,19 +12,12 @@ import {
 import { FaCode, FaDesktop, FaMobileAlt, FaServer, FaLayerGroup, FaTerminal, FaDatabase } from "react-icons/fa"
 
 export default function AboutPage() {
+  const t = useTranslations('about');
+  
   const fadeIn = {
     hidden: { opacity: 0, y: 20 },
     visible: { opacity: 1, y: 0 }
   }
-
-  const experiences = [
-    {
-      title: "Web Developer",
-      company: "Poppa Technology",
-      period: "2022 - Present",
-      description: "Developing and maintaining modern web applications with React, Next.js, and TypeScript. Collaborating with cross-functional teams to deliver user-centered solutions and implementing responsive designs that work across all devices."
-    }
-  ]
 
   const skillCategories = [
     {
@@ -86,37 +80,38 @@ export default function AboutPage() {
 
   return (
     <div className="container max-w-5xl mx-auto py-12 px-4 sm:px-6 lg:px-8 space-y-12">
-      {/* About Me section remains unchanged */}
+      {/* About Me section */}
       <motion.div
         initial="hidden"
         animate="visible"
         variants={fadeIn}
         transition={{ duration: 0.5 }}
       >
-        <h1 className="text-4xl font-bold mb-8">About Me</h1>
+        <h1 className="text-4xl font-bold mb-8">{t('title')}</h1>
         <div className="prose dark:prose-invert max-w-none">
           <p className="text-lg">
-            Hello! I'm Kyaw Phyo Thu, a passionate web and mobile developer specializing in JavaScript, TypeScript, PHP, Laravel, React, Next.js, and Expo. I build clean, efficient, and scalable applications, turning ideas into seamless digital experiences.
+            {t('intro.p1')}
           </p>
           <p className="text-lg">
-            Since 2022, I've been crafting modern web applications at Poppa Technology, where I've honed my skills in both front-end and back-end development. I approach each project with a problem-solving mindset, looking for ways to optimize performance while maintaining clean, maintainable code.
+            {t('intro.p2')}
           </p>
           <p className="text-lg">
-            What drives me is the continuous evolution of web and mobile technologies and the challenge of staying at the cutting edge. I enjoy working across the full stack to build dynamic, responsive interfaces that deliver exceptional user experiences across all devices.
+            {t('intro.p3')}
           </p>
         </div>
       </motion.div>
 
-      {/* Experience section remains unchanged */}
+      {/* Experience section */}
       <motion.div
         initial="hidden"
         animate="visible"
         variants={fadeIn}
         transition={{ duration: 0.5, delay: 0.2 }}
       >
-        <h2 className="text-3xl font-bold mb-6">Experience</h2>
+        <h2 className="text-3xl font-bold mb-6">{t('experience.title')}</h2>
         <div className="space-y-4">
-          {experiences.map((exp, index) => (
+          {/* Map through experiences from translation */}
+          {t.raw('experience.items').map((exp: any, index: number) => (
             <Card key={index}>
               <CardHeader>
                 <CardTitle>{exp.title} @ {exp.company}</CardTitle>
@@ -137,7 +132,7 @@ export default function AboutPage() {
         variants={fadeIn}
         transition={{ duration: 0.5, delay: 0.3 }}
       >
-        <h2 className="text-3xl font-bold mb-6">Skills & Technologies</h2>
+        <h2 className="text-3xl font-bold mb-6">{t('skills.title')}</h2>
         
         <div className="space-y-8">
           {skillCategories.map((category, categoryIndex) => (
@@ -172,7 +167,7 @@ export default function AboutPage() {
         </div>
       </motion.div>
 
-      {/* Let's Build Something Together section remains unchanged */}
+      {/* Let's Build Something Together section */}
       <motion.div
         initial="hidden"
         animate="visible"
@@ -180,12 +175,12 @@ export default function AboutPage() {
         transition={{ duration: 0.5, delay: 0.5 }}
         className="prose dark:prose-invert max-w-none"
       >
-        <h2 className="text-3xl font-bold mb-6">Let's Build Something Together</h2>
+        <h2 className="text-3xl font-bold mb-6">{t('callToAction.title')}</h2>
         <p className="text-lg">
-          I'm always open to new challenges and opportunities to collaborate on exciting projects. Whether you're looking to develop a new web application, enhance an existing one, or simply want to connect with a fellow developer, I'd love to hear from you.
+          {t('callToAction.p1')}
         </p>
         <p className="text-lg">
-          Feel free to explore my projects and reach out through the contact page if you'd like to discuss how we might work together to bring your ideas to life.
+          {t('callToAction.p2')}
         </p>
       </motion.div>
     </div>
