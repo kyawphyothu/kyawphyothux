@@ -1,5 +1,5 @@
 import * as motion from "motion/react-client"
-import { Github, Linkedin, Mail, Twitter } from "lucide-react"
+import { Facebook, Github, Mail } from "lucide-react"
 import { useTranslations } from 'next-intl'
 
 export function Footer() {
@@ -9,19 +9,24 @@ export function Footer() {
   const socialLinks = [
     {
       name: "GitHub",
-      href: "https://github.com/yourusername",
+      href: "https://github.com/kyawphyothu",
       icon: <Github className="h-5 w-5" />,
     },
     {
-      name: "LinkedIn",
-      href: "https://linkedin.com/in/yourusername",
-      icon: <Linkedin className="h-5 w-5" />,
+      name: "Facebook",
+      href: "https://facebook.com/kyawphyothu.x",
+      icon: <Facebook className="h-5 w-5" />,
     },
-    {
-      name: "Twitter",
-      href: "https://twitter.com/yourusername",
-      icon: <Twitter className="h-5 w-5" />,
-    },
+    // {
+    //   name: "LinkedIn",
+    //   href: "https://linkedin.com/in/yourusername",
+    //   icon: <Linkedin className="h-5 w-5" />,
+    // },
+    // {
+    //   name: "Twitter",
+    //   href: "https://twitter.com/yourusername",
+    //   icon: <Twitter className="h-5 w-5" />,
+    // },
     {
       name: "Email",
       href: "mailto:kyawphyothukpt256@gmail.com",
