@@ -9,9 +9,22 @@ import {
 } from "react-icons/si"
 import { FaDesktop, FaMobileAlt, FaServer, FaLayerGroup, FaTerminal, FaDatabase } from "react-icons/fa"
 import ReactMarkdown from 'react-markdown';
+import { Metadata } from 'next'
+import { getTranslations } from 'next-intl/server';
 
-// export const dynamic = 'force-static';
-// export const revalidate = false;
+export async function generateMetadata({ params }: { params: { locale: string } }): Promise<Metadata> {
+  const t = await getTranslations({ locale: params.locale, namespace: 'metadata' });
+  
+  return {
+    title: t('about.title'),
+    description: t('about.description'),
+    openGraph: {
+      title: t('about.og.title'),
+      description: t('about.og.description'),
+      images: ['/images/profile.png']
+    }
+  };
+}
 
 export default function AboutPage() {
   const t = useTranslations('about');

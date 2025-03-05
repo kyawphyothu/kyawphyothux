@@ -11,6 +11,22 @@ import {
 import { Button } from "@/components/ui/button"
 import { Github, ExternalLink, BarChart2, Clock, DollarSign, Database, Sparkles, ListChecks, LineChart, Calendar, Star } from "lucide-react"
 import { useTranslations } from 'next-intl'
+import { Metadata } from 'next'
+import { getTranslations } from 'next-intl/server';
+
+export async function generateMetadata({ params }: { params: { locale: string } }): Promise<Metadata> {
+  const t = await getTranslations({ locale: params.locale, namespace: 'metadata' });
+  
+  return {
+    title: t('projects.title'),
+    description: t('projects.description'),
+    openGraph: {
+      title: t('projects.og.title'),
+      description: t('projects.og.description'),
+      images: ['/images/profile.png']
+    }
+  };
+}
 
 // export const dynamic = 'force-static';
 // export const revalidate = false;

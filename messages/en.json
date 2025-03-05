@@ -1,4 +1,38 @@
 {
+    "metadata": {
+      "home": {
+        "title": "Kyaw Phyo Thu - Software Engineer & Web Developer",
+        "description": "Personal portfolio of Kyaw Phyo Thu, a software engineer specializing in web and mobile development",
+        "og": {
+          "title": "Kyaw Phyo Thu - Portfolio Homepage",
+          "description": "Explore the skills and work of Kyaw Phyo Thu, a software engineer"
+        }
+      },
+      "about": {
+        "title": "About Me - Kyaw Phyo Thu",
+        "description": "Learn about Kyaw Phyo Thu's background, experience, and technical skills",
+        "og": {
+          "title": "About Kyaw Phyo Thu - Software Engineer",
+          "description": "My professional background and technical expertise in software development"
+        }
+      },
+      "projects": {
+        "title": "Projects - Kyaw Phyo Thu",
+        "description": "Showcase of web and mobile applications developed by Kyaw Phyo Thu",
+        "og": {
+          "title": "Portfolio Projects - Kyaw Phyo Thu",
+          "description": "Featured web and mobile projects developed by Kyaw Phyo Thu"
+        }
+      },
+      "contact": {
+        "title": "Contact - Kyaw Phyo Thu",
+        "description": "Get in touch with Kyaw Phyo Thu for project inquiries or professional opportunities",
+        "og": {
+          "title": "Contact Kyaw Phyo Thu",
+          "description": "Reach out to discuss project opportunities or professional collaboration"
+        }
+      }
+    },
     "navigation": {
       "home": "Home",
       "about": "About",

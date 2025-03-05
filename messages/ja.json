@@ -1,191 +1,225 @@
 {
-    "navigation": {
-      "home": "ホーム",
-      "about": "自己紹介",
-      "projects": "プロジェクト",
-      "contact": "お問い合わせ"
-    },
-    "hero": {
-      "name": "キョー・ピョー・トゥ",
-      "role": "ソフトウェアエンジニア ＆ ウェブ開発者",
-      "cta": {
-        "viewProjects": "プロジェクトを見る",
-        "contactMe": "お問い合わせ"
-      }
-    },
+  "metadata": {
     "home": {
-      "about": {
-        "title": "自己紹介",
-        "content": "私は優れたデジタル体験の構築を専門とする情熱的なソフトウェアエンジニアです。最新のウェブ技術に強い基盤を持ち、実世界の問題を解決するスケーラブルでユーザーフレンドリーなアプリケーションを作成しています。",
-        "experience": "2022年からウェブおよびモバイルアプリケーションの構築経験があり、JavaScript、React、TypeScriptを専門としています。",
-        "learnMore": "詳しい経歴を見る"
-      },
-      "skills": {
-        "title": "スキル",
-        "list": ["React", "Next.js", "TypeScript", "Node.js", "Tailwind CSS", "Git"],
-        "featured": [
-          { "name": "フロントエンド", "icon": "FaDesktop" },
-          { "name": "バックエンド", "icon": "FaServer" },
-          { "name": "データベース", "icon": "FaDatabase" }
-        ],
-        "viewAll": "すべてのスキルを詳しく見る"
-      },
-      "projects": {
-        "title": "注目プロジェクト",
-        "viewAll": "全プロジェクトを閲覧する",
-        "learnMore": "プロジェクトの詳細を見る",
-        "items": [
-          {
-            "title": "シー質店管理システム",
-            "description": "家族経営の質店ビジネスを管理するためのExpoとReact Nativeで構築された包括的なモバイルアプリケーション。",
-            "image": "/images/she/home-1.png",
-            "technologies": ["Expo", "React Native", "TypeScript", "Laravel"]
-          },
-          {
-            "title": "ポモドAI - スマート生産性タイマー",
-            "description": "AI搭載のタスク生成機能を備えた現代的なポモドーロタイマーアプリケーション。",
-            "image": "/images/pomo/home.png",
-            "technologies": ["Next.js", "TypeScript", "shadcn/ui", "ChatGPT API"]
-          }
-        ]
+      "title": "キョー・ピョー・トゥ - ソフトウェアエンジニア＆ウェブ開発者",
+      "description": "ウェブとモバイル開発を専門とするソフトウェアエンジニア、キョー・ピョー・トゥのポートフォリオサイト",
+      "og": {
+        "title": "キョー・ピョー・トゥ - ポートフォリオサイト",
+        "description": "ソフトウェアエンジニア、キョー・ピョー・トゥのスキルと作品をご覧ください"
       }
     },
     "about": {
-      "title": "自己紹介",
-      "intro": {
-        "p1": "こんにちは！私はキョー・ピョー・トゥです。JavaScript、TypeScript、PHP、Laravel、React、Next.js、Expoを専門とする熱心な**ウェブおよびモバイル開発者**です。クリーンで効率的、そしてスケーラブルなアプリケーションを構築し、アイデアをシームレスなデジタル体験に変えています。",
-        "p2": "2022年からPoppa Technologyで**最新のウェブアプリケーション**を構築し、**フロントエンドとバックエンド開発**の両方でスキルを磨いてきました。各プロジェクトに問題解決の考え方でアプローチし、クリーンで保守可能なコードを維持しながらパフォーマンスを最適化する方法を探っています。",
-        "p3": "私を動かすのは、ウェブとモバイル技術の**継続的な進化**と、最先端であり続けるという課題です。**フルスタック**全体で作業し、すべてのデバイスで優れたユーザー体験を提供する動的で応答性の高いインターフェースを構築することを楽しんでいます。"
-      },
-      "experience": {
-        "title": "経験",
-        "items": [
-          {
-            "title": "ウェブ開発者",
-            "company": "Poppa Technology",
-            "period": "2022 - 現在",
-            "description": "React、Next.js、TypeScriptを使用した最新のウェブアプリケーションの開発と保守。ユーザー中心のソリューションを提供するためのクロスファンクショナルチームとの協力、およびあらゆるデバイスで動作するレスポンシブなデザインの実装。"
-          }
-        ]
-      },
-      "skills": {
-        "title": "スキルと技術"
-      },
-      "callToAction": {
-        "title": "一緒に何かを作りましょう",
-        "p1": "私は常に新しい課題や刺激的なプロジェクトでの協力の機会を歓迎しています。新しいウェブアプリケーションの開発、既存のアプリケーションの強化、または単に同業の開発者とつながりたいと思っている方、ぜひお気軽にお問い合わせください。",
-        "p2": "私のプロジェクトをご覧いただき、私たちがどのように協力してアイデアを実現できるかについて話し合いたい場合は、お問い合わせページからご連絡ください。"
+      "title": "自己紹介 - キョー・ピョー・トゥ",
+      "description": "キョー・ピョー・トゥの経歴、経験、技術的スキルについて",
+      "og": {
+        "title": "キョー・ピョー・トゥについて - ソフトウェアエンジニア",
+        "description": "ソフトウェア開発における私の専門知識と経験"
       }
     },
     "projects": {
-      "title": "プロジェクト",
-      "description": "私の開発作品のショーケースです。各プロジェクトは、技術を通じて実世界の問題を解決するための私のアプローチを表しています。",
-      "features": "主な機能",
-      "technologies": "使用技術",
-      "sourceCode": "ソースコード",
-      "liveDemo": "実際のデモ",
-      "comingSoon": {
-        "title": "新しいプロジェクト準備中",
-        "description": "現在、近日中にここで紹介される予定のいくつかの新しいプロジェクトに取り組んでいます。後でまた確認するか、私の現在の仕事についてもっと知りたい場合はお問い合わせください。"
-      },
-      "projectItems": [
+      "title": "プロジェクト - キョー・ピョー・トゥ",
+      "description": "キョー・ピョー・トゥが開発したウェブとモバイルアプリケーションの紹介",
+      "og": {
+        "title": "ポートフォリオプロジェクト - キョー・ピョー・トゥ",
+        "description": "キョー・ピョー・トゥが開発したウェブとモバイルプロジェクト"
+      }
+    },
+    "contact": {
+      "title": "お問い合わせ - キョー・ピョー・トゥ",
+      "description": "プロジェクトの問い合わせや専門的な機会についてキョー・ピョー・トゥに連絡する",
+      "og": {
+        "title": "キョー・ピョー・トゥにお問い合わせ",
+        "description": "プロジェクトの機会や専門的なコラボレーションについて話し合う"
+      }
+    }
+  },
+  "navigation": {
+    "home": "ホーム",
+    "about": "自己紹介",
+    "projects": "プロジェクト",
+    "contact": "お問い合わせ"
+  },
+  "hero": {
+    "name": "キョー・ピョー・トゥ",
+    "role": "ソフトウェアエンジニア ＆ ウェブ開発者",
+    "cta": {
+      "viewProjects": "プロジェクトを見る",
+      "contactMe": "お問い合わせ"
+    }
+  },
+  "home": {
+    "about": {
+      "title": "自己紹介",
+      "content": "私は優れたデジタル体験の構築を専門とする情熱的なソフトウェアエンジニアです。最新のウェブ技術に強い基盤を持ち、実世界の問題を解決するスケーラブルでユーザーフレンドリーなアプリケーションを作成しています。",
+      "experience": "2022年からウェブおよびモバイルアプリケーションの構築経験があり、JavaScript、React、TypeScriptを専門としています。",
+      "learnMore": "詳しい経歴を見る"
+    },
+    "skills": {
+      "title": "スキル",
+      "list": ["React", "Next.js", "TypeScript", "Node.js", "Tailwind CSS", "Git"],
+      "featured": [
+        { "name": "フロントエンド", "icon": "FaDesktop" },
+        { "name": "バックエンド", "icon": "FaServer" },
+        { "name": "データベース", "icon": "FaDatabase" }
+      ],
+      "viewAll": "すべてのスキルを詳しく見る"
+    },
+    "projects": {
+      "title": "注目プロジェクト",
+      "viewAll": "全プロジェクトを閲覧する",
+      "learnMore": "プロジェクトの詳細を見る",
+      "items": [
         {
-          "id": "she-pawn-shop",
           "title": "シー質店管理システム",
-          "description": "家族経営の質店ビジネスを管理するためのExpoとReact Nativeで構築された包括的なモバイルアプリケーション。このアプリは在庫管理、財務管理、レポートを処理します。",
-          "type": "mobile",
-          "tags": ["Expo", "React Native", "TypeScript", "Laravel", "RESTful API", "財務管理"],
-          "features": [
-            { "name": "日次取引履歴", "icon": "dailyTransactionHistory" },
-            { "name": "金在庫追跡", "icon": "goldInventoryTracking" },
-            { "name": "キャッシュフロー管理", "icon": "cashFlowManagement" },
-            { "name": "収益分析", "icon": "profitAnalytics" }
-          ],
-          "screenshots": [
-            { "src": "/images/she/home-1.png", "alt": "シー質店ホーム画面" },
-            { "src": "/images/she/daily-history.png", "alt": "日次履歴画面" },
-            { "src": "/images/she/orders.png", "alt": "注文画面" }
-          ],
-          "github": "#",
-          "demo": "#"
+          "description": "家族経営の質店ビジネスを管理するためのExpoとReact Nativeで構築された包括的なモバイルアプリケーション。",
+          "image": "/images/she/home-1.png",
+          "technologies": ["Expo", "React Native", "TypeScript", "Laravel"]
         },
         {
-          "id": "pomodoai",
           "title": "ポモドAI - スマート生産性タイマー",
-          "description": "AI搭載のタスク生成機能を備えた現代的なポモドーロタイマーアプリケーション。このウェブアプリは、AIを活用して自然言語プロンプトに基づいてタスクを作成・整理しながら、ユーザーが時間を効果的に管理するのを支援します。",
-          "type": "web",
-          "tags": ["Next.js", "TypeScript", "shadcn/ui", "Laravel", "ChatGPT API", "生産性"],
-          "features": [
-            { "name": "カスタマイズ可能なポモドーロタイマー", "icon": "customizableTimer" },
-            { "name": "AIタスク生成", "icon": "aiTaskGeneration" },
-            { "name": "タスク管理", "icon": "taskManagement" },
-            { "name": "生産性分析", "icon": "productivityAnalytics" }
-          ],
-          "screenshots": [
-            { "src": "/images/pomo/home.png", "alt": "ポモドAIダッシュボード" },
-            { "src": "/images/pomodoro/timer.png", "alt": "アクティブタイマー" },
-            { "src": "/images/pomodoro/ai-task.png", "alt": "AIタスク作成" }
-          ],
-          "github": "#",
-          "demo": "https://pomoxx.kyawphyothu.com"
-        },
+          "description": "AI搭載のタスク生成機能を備えた現代的なポモドーロタイマーアプリケーション。",
+          "image": "/images/pomo/home.png",
+          "technologies": ["Next.js", "TypeScript", "shadcn/ui", "ChatGPT API"]
+        }
+      ]
+    }
+  },
+  "about": {
+    "title": "自己紹介",
+    "intro": {
+      "p1": "こんにちは！私はキョー・ピョー・トゥです。JavaScript、TypeScript、PHP、Laravel、React、Next.js、Expoを専門とする熱心な**ウェブおよびモバイル開発者**です。クリーンで効率的、そしてスケーラブルなアプリケーションを構築し、アイデアをシームレスなデジタル体験に変えています。",
+      "p2": "2022年からPoppa Technologyで**最新のウェブアプリケーション**を構築し、**フロントエンドとバックエンド開発**の両方でスキルを磨いてきました。各プロジェクトに問題解決の考え方でアプローチし、クリーンで保守可能なコードを維持しながらパフォーマンスを最適化する方法を探っています。",
+      "p3": "私を動かすのは、ウェブとモバイル技術の**継続的な進化**と、最先端であり続けるという課題です。**フルスタック**全体で作業し、すべてのデバイスで優れたユーザー体験を提供する動的で応答性の高いインターフェースを構築することを楽しんでいます。"
+    },
+    "experience": {
+      "title": "経験",
+      "items": [
         {
-          "id": "baydin",
-          "title": "バイディン - ビルマ占星術計算機",
-          "description": "ビルマの占星術計算のための包括的なウェブアプリケーション。生まれた時間に基づく赤ちゃんの名前の提案、マハボテ占星術、および詳細な十二支の解釈を含みます。",
-          "type": "web",
-          "tags": ["Next.js", "TypeScript", "shadcn/ui", "占星術", "文化遺産"],
-          "features": [
-            { "name": "赤ちゃんの名前提案", "icon": "Sparkles" },
-            { "name": "マハボテ計算", "icon": "Calendar" },
-            { "name": "十二支の詳細", "icon": "Star" },
-            { "name": "誕生時間分析", "icon": "Clock" }
-          ],
-          "screenshots": [
-            { "src": "/images/baydin/result.png", "alt": "占星術結果表示" }
-          ],
-          "github": "#",
-          "demo": "https://baydin.kyawphyothu.com"
+          "title": "ウェブ開発者",
+          "company": "Poppa Technology",
+          "period": "2022 - 現在",
+          "description": "React、Next.js、TypeScriptを使用した最新のウェブアプリケーションの開発と保守。ユーザー中心のソリューションを提供するためのクロスファンクショナルチームとの協力、およびあらゆるデバイスで動作するレスポンシブなデザインの実装。"
         }
       ]
     },
-    "contact": {
-      "title": "お問い合わせ",
-      "description": "プロジェクトについてのアイデアがあるか、単に挨拶したいですか？お聞かせください！",
-      "form": {
-        "title": "メッセージを送る",
-        "description": "以下のフォームに記入していただければ、できるだけ早くご返信いたします。",
-        "name": "お名前",
-        "email": "メールアドレス",
-        "subject": "件名",
-        "message": "メッセージ",
-        "sendButton": "送信",
-        "sending": "送信中..."
-      },
-      "success": {
-        "title": "メッセージが正常に送信されました！",
-        "description": "ご連絡いただきありがとうございます。近日中にご連絡いたします。"
-      },
-      "error": {
-        "title": "メッセージの送信に失敗しました",
-        "description": "後でもう一度お試しください。"
-      },
-      "info": {
-        "email": {
-          "title": "メール",
-          "value": "kyawphyothukpt256@gmail.com"
-        },
-        "phone": {
-          "title": "電話",
-          "value": "+95 9787977509"
-        },
-        "location": {
-          "title": "場所",
-          "value": "ホーチミン市、ベトナム"
-        }
-      }
+    "skills": {
+      "title": "スキルと技術"
     },
-    "footer": {
-      "copyright": "© {year} キョー・ピョー・トゥ. 全著作権所有。"
+    "callToAction": {
+      "title": "一緒に何かを作りましょう",
+      "p1": "私は常に新しい課題や刺激的なプロジェクトでの協力の機会を歓迎しています。新しいウェブアプリケーションの開発、既存のアプリケーションの強化、または単に同業の開発者とつながりたいと思っている方、ぜひお気軽にお問い合わせください。",
+      "p2": "私のプロジェクトをご覧いただき、私たちがどのように協力してアイデアを実現できるかについて話し合いたい場合は、お問い合わせページからご連絡ください。"
     }
+  },
+  "projects": {
+    "title": "プロジェクト",
+    "description": "私の開発作品のショーケースです。各プロジェクトは、技術を通じて実世界の問題を解決するための私のアプローチを表しています。",
+    "features": "主な機能",
+    "technologies": "使用技術",
+    "sourceCode": "ソースコード",
+    "liveDemo": "実際のデモ",
+    "comingSoon": {
+      "title": "新しいプロジェクト準備中",
+      "description": "現在、近日中にここで紹介される予定のいくつかの新しいプロジェクトに取り組んでいます。後でまた確認するか、私の現在の仕事についてもっと知りたい場合はお問い合わせください。"
+    },
+    "projectItems": [
+      {
+        "id": "she-pawn-shop",
+        "title": "シー質店管理システム",
+        "description": "家族経営の質店ビジネスを管理するためのExpoとReact Nativeで構築された包括的なモバイルアプリケーション。このアプリは在庫管理、財務管理、レポートを処理します。",
+        "type": "mobile",
+        "tags": ["Expo", "React Native", "TypeScript", "Laravel", "RESTful API", "財務管理"],
+        "features": [
+          { "name": "日次取引履歴", "icon": "dailyTransactionHistory" },
+          { "name": "金在庫追跡", "icon": "goldInventoryTracking" },
+          { "name": "キャッシュフロー管理", "icon": "cashFlowManagement" },
+          { "name": "収益分析", "icon": "profitAnalytics" }
+        ],
+        "screenshots": [
+          { "src": "/images/she/home-1.png", "alt": "シー質店ホーム画面" },
+          { "src": "/images/she/daily-history.png", "alt": "日次履歴画面" },
+          { "src": "/images/she/orders.png", "alt": "注文画面" }
+        ],
+        "github": "#",
+        "demo": "#"
+      },
+      {
+        "id": "pomodoai",
+        "title": "ポモドAI - スマート生産性タイマー",
+        "description": "AI搭載のタスク生成機能を備えた現代的なポモドーロタイマーアプリケーション。このウェブアプリは、AIを活用して自然言語プロンプトに基づいてタスクを作成・整理しながら、ユーザーが時間を効果的に管理するのを支援します。",
+        "type": "web",
+        "tags": ["Next.js", "TypeScript", "shadcn/ui", "Laravel", "ChatGPT API", "生産性"],
+        "features": [
+          { "name": "カスタマイズ可能なポモドーロタイマー", "icon": "customizableTimer" },
+          { "name": "AIタスク生成", "icon": "aiTaskGeneration" },
+          { "name": "タスク管理", "icon": "taskManagement" },
+          { "name": "生産性分析", "icon": "productivityAnalytics" }
+        ],
+        "screenshots": [
+          { "src": "/images/pomo/home.png", "alt": "ポモドAIダッシュボード" },
+          { "src": "/images/pomodoro/timer.png", "alt": "アクティブタイマー" },
+          { "src": "/images/pomodoro/ai-task.png", "alt": "AIタスク作成" }
+        ],
+        "github": "#",
+        "demo": "https://pomoxx.kyawphyothu.com"
+      },
+      {
+        "id": "baydin",
+        "title": "バイディン - ビルマ占星術計算機",
+        "description": "ビルマの占星術計算のための包括的なウェブアプリケーション。生まれた時間に基づく赤ちゃんの名前の提案、マハボテ占星術、および詳細な十二支の解釈を含みます。",
+        "type": "web",
+        "tags": ["Next.js", "TypeScript", "shadcn/ui", "占星術", "文化遺産"],
+        "features": [
+          { "name": "赤ちゃんの名前提案", "icon": "Sparkles" },
+          { "name": "マハボテ計算", "icon": "Calendar" },
+          { "name": "十二支の詳細", "icon": "Star" },
+          { "name": "誕生時間分析", "icon": "Clock" }
+        ],
+        "screenshots": [
+          { "src": "/images/baydin/result.png", "alt": "占星術結果表示" }
+        ],
+        "github": "#",
+        "demo": "https://baydin.kyawphyothu.com"
+      }
+    ]
+  },
+  "contact": {
+    "title": "お問い合わせ",
+    "description": "プロジェクトについてのアイデアがあるか、単に挨拶したいですか？お聞かせください！",
+    "form": {
+      "title": "メッセージを送る",
+      "description": "以下のフォームに記入していただければ、できるだけ早くご返信いたします。",
+      "name": "お名前",
+      "email": "メールアドレス",
+      "subject": "件名",
+      "message": "メッセージ",
+      "sendButton": "送信",
+      "sending": "送信中..."
+    },
+    "success": {
+      "title": "メッセージが正常に送信されました！",
+      "description": "ご連絡いただきありがとうございます。近日中にご連絡いたします。"
+    },
+    "error": {
+      "title": "メッセージの送信に失敗しました",
+      "description": "後でもう一度お試しください。"
+    },
+    "info": {
+      "email": {
+        "title": "メール",
+        "value": "kyawphyothukpt256@gmail.com"
+      },
+      "phone": {
+        "title": "電話",
+        "value": "+95 9787977509"
+      },
+      "location": {
+        "title": "場所",
+        "value": "ホーチミン市、ベトナム"
+      }
+    }
+  },
+  "footer": {
+    "copyright": "© {year} キョー・ピョー・トゥ. 全著作権所有。"
   }
+}

@@ -7,6 +7,22 @@ import { useTranslations } from 'next-intl';
 import { Link } from '@/i18n/navigation';
 import { FaDatabase, FaDesktop, FaServer } from 'react-icons/fa';
 import Image from 'next/image';
+import { Metadata } from 'next'
+import { getTranslations } from 'next-intl/server';
+
+export async function generateMetadata({ params }: { params: { locale: string } }): Promise<Metadata> {
+  const t = await getTranslations({ locale: params.locale, namespace: 'metadata' });
+  
+  return {
+    title: t('home.title'),
+    description: t('home.description'),
+    openGraph: {
+      title: t('home.og.title'),
+      description: t('home.og.description'),
+      images: ['/images/profile.png']
+    }
+  };
+}
 
 // Add this to make the page static
 // export const dynamic = 'force-static';

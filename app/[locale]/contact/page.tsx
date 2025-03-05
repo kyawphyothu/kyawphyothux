@@ -3,6 +3,21 @@ import { Card, CardContent } from "@/components/ui/card"
 import { Mail, MapPin, Phone } from "lucide-react"
 import { getTranslations } from 'next-intl/server'
 import ContactForm from './contact-form'
+import { Metadata } from 'next'
+
+export async function generateMetadata({ params }: { params: { locale: string } }): Promise<Metadata> {
+  const t = await getTranslations({ locale: params.locale, namespace: 'metadata' });
+  
+  return {
+    title: t('contact.title'),
+    description: t('contact.description'),
+    openGraph: {
+      title: t('contact.og.title'),
+      description: t('contact.og.description'),
+      images: ['/images/profile.png']
+    }
+  };
+}
 
 // export const dynamic = 'force-static';
 // export const revalidate = false;
