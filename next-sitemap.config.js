@@ -11,28 +11,45 @@ module.exports = {
       '/admin/*',
       '/404',
       '/500',
-      // Exclude any internal paths or paths you don't want indexed
       '/_*',
-      '/[locale]/admin/*' // If you have locale-specific admin pages
+      '/[locale]/admin/*'
+    ],
+    // Add alternateRefs for language versions
+    alternateRefs: [
+      {
+        href: 'https://kyawphyothu.com/en',
+        hreflang: 'en'
+      },
+      {
+        href: 'https://kyawphyothu.com/ja',
+        hreflang: 'ja'
+      },
+      {
+        href: 'https://kyawphyothu.com/my',
+        hreflang: 'my'
+      }
     ],
     transform: async (config, path) => {
       // Special handling for project pages
       if (path.includes('/projects/')) {
         return {
           loc: path,
-          changefreq: 'monthly', // Projects may not change as frequently
+          changefreq: 'monthly',
           priority: 0.8,
           lastmod: config.autoLastmod ? new Date().toISOString() : undefined,
+          alternateRefs: config.alternateRefs ?? []
         }
       }
       
       // Prioritize main pages
-      if (path === '/' || path === '/about' || path === '/contact') {
+      if (path === '/' || path === '/about' || path === '/contact' || 
+          path.startsWith('/en/') || path.startsWith('/ja/') || path.startsWith('/my/')) {
         return {
           loc: path,
           changefreq: 'monthly',
           priority: 0.9,
           lastmod: config.autoLastmod ? new Date().toISOString() : undefined,
+          alternateRefs: config.alternateRefs ?? []
         }
       }
       
@@ -42,6 +59,7 @@ module.exports = {
         changefreq: config.changefreq,
         priority: config.priority,
         lastmod: config.autoLastmod ? new Date().toISOString() : undefined,
+        alternateRefs: config.alternateRefs ?? []
       }
     },
     robotsTxtOptions: {
@@ -52,9 +70,6 @@ module.exports = {
           disallow: ['/api/', '/admin/']
         }
       ],
-      additionalSitemaps: [
-        // If you implement server-side sitemaps later, uncomment and add them here
-        // 'https://kyawphyothu.com/server-sitemap.xml',
-      ]
+      additionalSitemaps: []
     }
   }
