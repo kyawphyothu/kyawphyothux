@@ -7,17 +7,20 @@ export const routing = defineRouting({
     '/': '/',
     '/about': {
       en: '/about',
-      ja: '/自己紹介',
+      // ja: '/自己紹介',
+      ja: "/about",
       my: '/about'
     },
     '/projects': {
       en: '/projects',
-      ja: '/プロジェクト',
+      // ja: '/プロジェクト',
+      ja: "/projects",
       my: '/projects'
     },
     '/contact': {
       en: '/contact',
-      ja: '/お問い合わせ',
+      // ja: '/お問い合わせ',
+      ja: "/contact",
       my: '/contact'
     }
   }
