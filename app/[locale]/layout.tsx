@@ -22,10 +22,11 @@ const inter = Inter({ subsets: ["latin"] })
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://kyawphyothu.com'),
-  title: {
-    default: "Kyaw Phyo Thu - Software Engineer & Web Developer",
-    template: "%s | Kyaw Phyo Thu",
-  },
+  title: "Kyaw Phyo Thu | Portfolio",
+  // title: {
+  //   default: "Kyaw Phyo Thu - Software Engineer & Web Developer",
+  //   template: "%s | Kyaw Phyo Thu",
+  // },
   description: "Portfolio of Kyaw Phyo Thu, a Software Engineer & Web Developer specializing in modern web technologies.",
   keywords: "software engineer, web developer, frontend developer, full stack developer, React developer, Next.js, TypeScript, JavaScript, mobile app development, UI/UX, responsive design, portfolio, software development, web applications, Node.js, tailwind css, Myanmar developer, international developer, multilingual developer",
   authors: [{name: "Kyaw Phyo Thu"}],
