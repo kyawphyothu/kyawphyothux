@@ -1,0 +1,11 @@
+# *
+User-agent: *
+Allow: /
+Disallow: /api/
+Disallow: /admin/
+
+# Host
+Host: https://kyawphyothu.com
+
+# Sitemaps
+Sitemap: https://kyawphyothu.com/sitemap.xml
