@@ -23,6 +23,10 @@ export const metadata: Metadata = {
   metadataBase: new URL('https://kyawphyothu.com'),
   title: "Kyaw Phyo Thu - Software Engineer & Web Developer",
   description: "Portfolio of Kyaw Phyo Thu, a Software Engineer & Web Developer specializing in modern web technologies.",
+  keywords: "software engineer, web developer, frontend developer, full stack developer, React developer, Next.js, TypeScript, JavaScript, mobile app development, UI/UX, responsive design, portfolio, software development, web applications, Node.js, tailwind css, Myanmar developer, international developer, multilingual developer",
+  verification: {
+    google: 'trIbAdtvmd9dCZf7adXX4OYJzffWlGGn2rE9NcTCDmc'
+  },
   openGraph: {
     title: "Kyaw Phyo Thu's Portfolio",
     description: "Explore the professional work and projects of Kyaw Phyo Thu.",
