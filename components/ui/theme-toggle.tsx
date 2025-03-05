@@ -7,7 +7,7 @@ import { motion } from "framer-motion"
 import { Button } from "@/components/ui/button"
 
 export function ThemeToggle() {
-  const { theme, setTheme } = useTheme()
+  const { theme, setTheme, resolvedTheme } = useTheme()
   const [mounted, setMounted] = React.useState(false)
   
   // After mounting, we can access the theme
@@ -29,6 +29,9 @@ export function ThemeToggle() {
     return <Button variant="ghost" size="icon" className="rounded-full w-9 h-9 flex items-center justify-center" />
   }
 
+  // Use resolvedTheme to determine the actual theme (including system preference)
+  const isCurrentlyDark = resolvedTheme === 'dark'
+
   return (
     <Button 
       variant="ghost" 
@@ -38,15 +41,15 @@ export function ThemeToggle() {
     >
       <motion.div
         initial={false}
-        animate={{ rotate: theme === 'dark' ? 0 : 180 }}
+        animate={{ rotate: isCurrentlyDark ? 0 : 180 }}
         transition={{ duration: 0.5, ease: "easeInOut" }}
         className="relative flex items-center justify-center w-5 h-5"
       >
         <motion.div
           initial={false}
           animate={{ 
-            opacity: theme === 'dark' ? 1 : 0,
-            scale: theme === 'dark' ? 1 : 0,
+            opacity: isCurrentlyDark ? 1 : 0,
+            scale: isCurrentlyDark ? 1 : 0,
           }}
           transition={{ duration: 0.5 }}
           className="absolute"
@@ -56,8 +59,8 @@ export function ThemeToggle() {
         <motion.div
           initial={false}
           animate={{ 
-            opacity: theme === 'light' ? 1 : 0,
-            scale: theme === 'light' ? 1 : 0,
+            opacity: isCurrentlyDark ? 0 : 1,
+            scale: isCurrentlyDark ? 0 : 1,
           }}
           transition={{ duration: 0.5 }}
           className="absolute"
