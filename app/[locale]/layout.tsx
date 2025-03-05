@@ -22,23 +22,31 @@ const inter = Inter({ subsets: ["latin"] })
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://kyawphyothu.com'),
-  title: "Kyaw Phyo Thu - Software Engineer & Web Developer",
+  title: {
+    default: "Kyaw Phyo Thu - Software Engineer & Web Developer",
+    template: "%s | Kyaw Phyo Thu",
+  },
   description: "Portfolio of Kyaw Phyo Thu, a Software Engineer & Web Developer specializing in modern web technologies.",
   keywords: "software engineer, web developer, frontend developer, full stack developer, React developer, Next.js, TypeScript, JavaScript, mobile app development, UI/UX, responsive design, portfolio, software development, web applications, Node.js, tailwind css, Myanmar developer, international developer, multilingual developer",
+  authors: [{name: "Kyaw Phyo Thu"}],
+  creator: "Kyaw Phyo Thu",
+  publisher: "Kyaw Phyo Thu",
   verification: {
     google: 'trIbAdtvmd9dCZf7adXX4OYJzffWlGGn2rE9NcTCDmc'
   },
   openGraph: {
-    title: "Kyaw Phyo Thu's Portfolio",
-    description: "Explore the professional work and projects of Kyaw Phyo Thu.",
-    url: "https://kyawphyothu.com",
     type: "website",
     locale: "en_US",
+    siteName: "Kyaw Phyo Thu's Portfolio",
+    title: "Kyaw Phyo Thu | Portfolio",
+    description: 'Professional portfolio showcasing my projects and skills in web development',
+    url: "https://kyawphyothu.com",
     images: [
       {
         url: "/images/profile.png",
         width: 1080,
         height: 1080,
+        alt: "Kyaw Phyo Thu"
       }
     ]
   }
