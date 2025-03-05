@@ -6,6 +6,7 @@ module.exports = {
     priority: 0.7,
     sitemapSize: 7000,
     sitemapBaseFileName: 'sitemap',
+    sourceDir: '.next', // Explicitly specify the Next.js output directory
     exclude: [
       '/api/*',
       '/admin/*',
@@ -61,6 +62,31 @@ module.exports = {
         lastmod: config.autoLastmod ? new Date().toISOString() : undefined,
         alternateRefs: config.alternateRefs ?? []
       }
+    },
+    // Add guaranteed paths to ensure sitemap isn't empty
+    additionalPaths: async (config) => {
+      const result = []
+      
+      // Add root path
+      result.push({ loc: '/' })
+      
+      // Add language-specific home pages
+      result.push({ 
+        loc: '/en',
+        alternateRefs: config.alternateRefs
+      })
+      
+      result.push({ 
+        loc: '/ja',
+        alternateRefs: config.alternateRefs
+      })
+      
+      result.push({ 
+        loc: '/my',
+        alternateRefs: config.alternateRefs
+      })
+      
+      return result
     },
     robotsTxtOptions: {
       policies: [
