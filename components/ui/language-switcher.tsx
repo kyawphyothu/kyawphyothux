@@ -17,7 +17,6 @@ export function LanguageSwitcher() {
   const currentLocale = useLocale();
   const router = useRouter();
   const pathname = usePathname();
-  // const [isChangingLocale, setIsChangingLocale] = useState(false);
   
   const switchLocale = (newLocale: string) => {
     const nextLocale = newLocale as Locale;
@@ -31,6 +30,13 @@ export function LanguageSwitcher() {
         { locale: nextLocale }
       );
     });
+  };
+
+  // Map locale codes to their display names
+  const localeNames = {
+    'en': 'English',
+    'ja': '日本語',
+    'my': 'မြန်မာ'
   };
 
   return (
@@ -52,7 +58,7 @@ export function LanguageSwitcher() {
             onClick={() => switchLocale(localeOption)}
             className={currentLocale === localeOption ? 'font-bold bg-accent' : ''}
           >
-            {localeOption === 'en' ? 'English' : '日本語'}
+            {localeNames[localeOption as keyof typeof localeNames]}
           </DropdownMenuItem>
         ))}
       </DropdownMenuContent>
