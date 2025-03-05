@@ -10,16 +10,28 @@ module.exports = {
       '/api/*',
       '/admin/*',
       '/404',
-      '/500'
+      '/500',
+      // Exclude any internal paths or paths you don't want indexed
+      '/_*',
+      '/[locale]/admin/*' // If you have locale-specific admin pages
     ],
     transform: async (config, path) => {
-      // Custom transformation for specific paths
-      if (path.includes('/blog/')) {
-        // Higher priority for blog posts
+      // Special handling for project pages
+      if (path.includes('/projects/')) {
         return {
           loc: path,
-          changefreq: 'weekly',
+          changefreq: 'monthly', // Projects may not change as frequently
           priority: 0.8,
+          lastmod: config.autoLastmod ? new Date().toISOString() : undefined,
+        }
+      }
+      
+      // Prioritize main pages
+      if (path === '/' || path === '/about' || path === '/contact') {
+        return {
+          loc: path,
+          changefreq: 'monthly',
+          priority: 0.9,
           lastmod: config.autoLastmod ? new Date().toISOString() : undefined,
         }
       }
@@ -41,7 +53,7 @@ module.exports = {
         }
       ],
       additionalSitemaps: [
-        // Add any additional sitemaps here if needed
+        // If you implement server-side sitemaps later, uncomment and add them here
         // 'https://kyawphyothu.com/server-sitemap.xml',
       ]
     }
