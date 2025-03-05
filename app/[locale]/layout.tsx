@@ -11,6 +11,7 @@ import {NextIntlClientProvider} from 'next-intl';
 import {getMessages} from 'next-intl/server';
 import {notFound} from 'next/navigation';
 import {routing} from '@/i18n/routing';
+import { GoogleAnalytics } from '@next/third-parties/google'
 
 const inter = Inter({ subsets: ["latin"] })
 
@@ -77,6 +78,7 @@ export default async function RootLayout({
           </ThemeProvider>
         </NextIntlClientProvider>
       </body>
+      <GoogleAnalytics gaId="G-FXBN9P271T" />
     </html>
   )
 }
