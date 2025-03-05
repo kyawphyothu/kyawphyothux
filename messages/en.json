@@ -128,6 +128,24 @@
           ],
           "github": "#",
           "demo": "https://pomoxx.kyawphyothu.com"
+        },
+        {
+          "id": "baydin",
+          "title": "Baydin - Burmese Astrology Calculator",
+          "description": "A comprehensive web application for Burmese astrology calculations, including baby name suggestions based on birth time, Mahabote horoscopes, and detailed zodiac sign interpretations.",
+          "type": "web",
+          "tags": ["Next.js", "TypeScript", "shadcn/ui", "Astrology", "Cultural Heritage"],
+          "features": [
+            { "name": "Baby Name Suggestions", "icon": "Sparkles" },
+            { "name": "Mahabote Calculations", "icon": "Calendar" },
+            { "name": "Zodiac Sign Details", "icon": "Star" },
+            { "name": "Birth Time Analysis", "icon": "Clock" }
+          ],
+          "screenshots": [
+            { "src": "/images/baydin/result.png", "alt": "Result Screen" }
+          ],
+          "github": "#",
+          "demo": "https://baydin.kyawphyothu.com"
         }
       ]
     },

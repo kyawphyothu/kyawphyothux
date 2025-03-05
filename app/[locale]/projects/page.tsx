@@ -9,7 +9,7 @@ import {
   CardFooter 
 } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
-import { Github, ExternalLink, BarChart2, Clock, DollarSign, Database, Sparkles, ListChecks, LineChart } from "lucide-react"
+import { Github, ExternalLink, BarChart2, Clock, DollarSign, Database, Sparkles, ListChecks, LineChart, Calendar, Star } from "lucide-react"
 import { useTranslations } from 'next-intl'
 
 // export const dynamic = 'force-static';
@@ -27,7 +27,11 @@ export default function ProjectsPage() {
     "customizableTimer": <Clock className="h-4 w-4 text-red-500" />,
     "aiTaskGeneration": <Sparkles className="h-4 w-4 text-amber-500" />,
     "taskManagement": <ListChecks className="h-4 w-4 text-indigo-500" />,
-    "productivityAnalytics": <LineChart className="h-4 w-4 text-emerald-500" />
+    "productivityAnalytics": <LineChart className="h-4 w-4 text-emerald-500" />,
+    "Sparkles": <Sparkles className="h-4 w-4 text-purple-500" />,
+    "Calendar": <Calendar className="h-4 w-4 text-orange-500" />,
+    "Star": <Star className="h-4 w-4 text-yellow-500" />,
+    "Clock": <Clock className="h-4 w-4 text-blue-500" />
   }
 
   // Animation variants

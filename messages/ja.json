@@ -128,6 +128,24 @@
           ],
           "github": "#",
           "demo": "https://pomoxx.kyawphyothu.com"
+        },
+        {
+          "id": "baydin",
+          "title": "バイディン - ビルマ占星術計算機",
+          "description": "ビルマの占星術計算のための包括的なウェブアプリケーション。生まれた時間に基づく赤ちゃんの名前の提案、マハボテ占星術、および詳細な十二支の解釈を含みます。",
+          "type": "web",
+          "tags": ["Next.js", "TypeScript", "shadcn/ui", "占星術", "文化遺産"],
+          "features": [
+            { "name": "赤ちゃんの名前提案", "icon": "Sparkles" },
+            { "name": "マハボテ計算", "icon": "Calendar" },
+            { "name": "十二支の詳細", "icon": "Star" },
+            { "name": "誕生時間分析", "icon": "Clock" }
+          ],
+          "screenshots": [
+            { "src": "/images/baydin/result.png", "alt": "占星術結果表示" }
+          ],
+          "github": "#",
+          "demo": "https://baydin.kyawphyothu.com"
         }
       ]
     },

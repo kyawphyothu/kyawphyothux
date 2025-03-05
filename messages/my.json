@@ -128,6 +128,24 @@
           ],
           "github": "#",
           "demo": "https://pomoxx.kyawphyothu.com"
+        },
+        {
+          "id": "baydin",
+          "title": "ဗေဒင် - မြန်မာနက္ခတ်ရေးတွက်ချက်မှုစနစ်",
+          "description": "မွေးချိန်ပေါ်မူတည်၍ ကလေးနာမည်ပေးခြင်း၊ မဟာဘုတ်တွက်နည်းများနှင့် ရာသီခွင်အကြောင်းအသေးစိတ်များပါဝင်သော ပြည့်စုံသောဗေဒင်တွက်ချက်မှုအက်ပ်။",
+          "type": "ဝက်ဘ်",
+          "tags": ["Next.js", "TypeScript", "shadcn/ui", "ဗေဒင်", "ယဉ်ကျေးမှုအမွေအနှစ်"],
+          "features": [
+            { "name": "ကလေးနာမည်ပေးခြင်း", "icon": "Sparkles" },
+            { "name": "မဟာဘုတ်တွက်နည်း", "icon": "Calendar" },
+            { "name": "ရာသီခွင်အသေးစိတ်", "icon": "Star" },
+            { "name": "မွေးချိန်ဆန်းစစ်ခြင်း", "icon": "Clock" }
+          ],
+          "screenshots": [
+            { "src": "/images/baydin/result.png", "alt": "ရလဒ်စာမျက်နှာ" }
+          ],
+          "github": "#",
+          "demo": "https://baydin.kyawphyothu.com"
         }
       ]
     },
