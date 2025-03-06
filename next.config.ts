@@ -11,12 +11,12 @@ import {NextConfig} from 'next';
 import createNextIntlPlugin from 'next-intl/plugin';
  
 const nextConfig: NextConfig = {
-    output: 'export', // This enables static HTML export
-    images: {
-      unoptimized: true, // For static export, we need this for images
-      // Add domains if you have external images
-      domains: ['https://kyawphyothu.com'],
-    },
+    // output: 'export', // This enables static HTML export
+    // images: {
+    //   unoptimized: true, // For static export, we need this for images
+    //   // Add domains if you have external images
+    //   domains: ['https://kyawphyothu.com'],
+    // },
     // Any other existing config...
 };
  
