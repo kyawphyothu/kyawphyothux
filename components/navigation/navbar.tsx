@@ -1,44 +1,34 @@
-"use client"
+"use client";
 
-import * as React from "react"
-import { motion } from "framer-motion"
-import { Menu, X } from "lucide-react"
-import { useTranslations } from 'next-intl'
-import { Link, usePathname } from '@/i18n/navigation'
+import * as React from "react";
+import { motion } from "framer-motion";
+import { Menu, X } from "lucide-react";
+import { useTranslations } from "next-intl";
+import { Link, usePathname } from "@/i18n/navigation";
+import { useLocale } from "next-intl";
 
-import { cn } from "@/lib/utils"
-import { Button } from "@/components/ui/button"
-import { ThemeToggle } from "@/components/ui/theme-toggle"
-import { LanguageSwitcher } from "@/components/ui/language-switcher"
+import { cn } from "@/lib/utils";
+import { Button } from "@/components/ui/button";
+import { ThemeToggle } from "@/components/ui/theme-toggle";
+import { LanguageSwitcher } from "@/components/ui/language-switcher";
 
 type Route = {
-  href: "/about" | "/contact" | "/projects" | "/",
-  label: string
-}
+  href: "/about" | "/contact" | "/projects" | "/";
+  label: string;
+};
 
 export function Navbar() {
-  const pathname = usePathname()
-  const [isOpen, setIsOpen] = React.useState(false)
-  const t = useTranslations('navigation')
+  const pathname = usePathname();
+  const locale = useLocale();
+  const [isOpen, setIsOpen] = React.useState(false);
+  const t = useTranslations("navigation");
 
   const routes: Route[] = [
-    {
-      href: "/",
-      label: t('home'),
-    },
-    {
-      href: "/about",
-      label: t('about'),
-    },
-    {
-      href: "/projects",
-      label: t('projects'),
-    },
-    {
-      href: "/contact",
-      label: t('contact'),
-    },
-  ]
+    { href: "/", label: t("home") },
+    { href: "/about", label: t("about") },
+    { href: "/projects", label: t("projects") },
+    { href: "/contact", label: t("contact") },
+  ];
 
   return (
     <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
@@ -53,7 +43,6 @@ export function Navbar() {
           </motion.div>
         </Link>
 
-        {/* Desktop Navigation */}
         <nav className="hidden md:flex items-center space-x-4 lg:space-x-6">
           {routes.map((route) => (
             <Link
@@ -61,7 +50,7 @@ export function Navbar() {
               href={route.href}
               className={cn(
                 "text-sm font-medium transition-colors hover:text-primary",
-                pathname === route.href
+                pathname === route.href || pathname === `/${locale}${route.href}`
                   ? "text-foreground"
                   : "text-muted-foreground"
               )}
@@ -75,7 +64,6 @@ export function Navbar() {
           </div>
         </nav>
 
-        {/* Mobile Navigation Toggle */}
         <Button
           variant="ghost"
           size="icon"
@@ -86,7 +74,6 @@ export function Navbar() {
         </Button>
       </div>
 
-      {/* Mobile Navigation Menu */}
       {isOpen && (
         <motion.div
           initial={{ opacity: 0, height: 0 }}
@@ -101,7 +88,7 @@ export function Navbar() {
                 href={route.href}
                 className={cn(
                   "text-sm font-medium transition-colors hover:text-primary p-2",
-                  pathname === route.href
+                  pathname === route.href || pathname === `/${locale}${route.href}`
                     ? "text-foreground bg-accent rounded-md"
                     : "text-muted-foreground"
                 )}
@@ -118,5 +105,5 @@ export function Navbar() {
         </motion.div>
       )}
     </header>
-  )
+  );
 }
