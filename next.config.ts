@@ -15,7 +15,7 @@ const nextConfig: NextConfig = {
     // images: {
     //   unoptimized: true, // For static export, we need this for images
     //   // Add domains if you have external images
-    //   domains: ['example.com'],
+    //   domains: ['https://kyawphyothu.com'],
     // },
     // Any other existing config...
 };

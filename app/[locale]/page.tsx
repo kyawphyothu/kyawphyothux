@@ -3,7 +3,6 @@ import { Card, CardHeader, CardTitle, CardContent, CardFooter } from "@/componen
 import { Button } from "@/components/ui/button";
 import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
 import { ArrowRight } from "lucide-react";
-import { useTranslations } from 'next-intl';
 import { Link } from '@/i18n/navigation';
 import { FaDatabase, FaDesktop, FaServer } from 'react-icons/fa';
 import Image from 'next/image';
@@ -26,12 +25,15 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
 }
 
 // Add this to make the page static
-// export const dynamic = 'force-static';
-// export const revalidate = false; // Never revalidate unless manually rebuilt
+export const dynamic = 'force-static';
+export const revalidate = false; // Never revalidate unless manually rebuilt
 
-export default function Home() {
-  const tHome = useTranslations('home');
-  const tHero = useTranslations('hero');
+export default async function Home({ params }: { params: Promise<{ locale: string }> }) {
+  // const tHome = useTranslations('home');
+  // const tHero = useTranslations('hero');
+  const { locale } = await params;
+  const tHome = await getTranslations({ locale: locale, namespace: 'home' });
+  const tHero = await getTranslations({ locale: locale, namespace: 'hero' });
 
   const container = {
     hidden: { opacity: 0 },
@@ -71,10 +73,10 @@ export default function Home() {
           <p className="text-xl text-muted-foreground mb-8">{tHero('role')}</p>
           <div className="flex flex-wrap gap-4 justify-center">
             <Button asChild>
-              <Link href="/projects">{tHero('cta.viewProjects')}</Link>
+              <Link locale={locale} href={{ pathname: "/projects" }}>{tHero('cta.viewProjects')}</Link>
             </Button>
             <Button variant="outline" asChild>
-              <Link href="/contact">{tHero('cta.contactMe')}</Link>
+              <Link locale={locale} href={{ pathname: "/contact"}}>{tHero('cta.contactMe')}</Link>
             </Button>
           </div>
         </motion.div>
@@ -114,7 +116,7 @@ export default function Home() {
               </CardContent>
               <CardFooter>
                 <Button variant="link" asChild className="p-0">
-                  <Link href={{ pathname: '/about', hash: "about" }}>
+                  <Link locale={locale} href={{ pathname: '/about', hash: "about" }}>
                     {tHome('about.learnMore')} <ArrowRight className="ml-2 h-4 w-4" />
                   </Link>
                 </Button>
@@ -149,7 +151,7 @@ export default function Home() {
               </CardContent>
               <CardFooter>
                 <Button variant="link" asChild className="p-0">
-                  <Link href={{ pathname: '/about', hash: 'skills' }}>
+                  <Link locale={locale} href={{ pathname: '/about', hash: 'skills' }}>
                     {tHome('skills.viewAll')} <ArrowRight className="ml-2 h-4 w-4" />
                   </Link>
                 </Button>
@@ -170,7 +172,7 @@ export default function Home() {
                     whileHover={{ y: -5 }}
                     className="transition-all duration-200"
                   >
-                    <Link href={{ pathname: '/projects', hash: `project-${project.id}` }} className="block">
+                    <Link locale={locale} href={{ pathname: '/projects', hash: `project-${project.id}` }} className="block">
                       <Card className="overflow-hidden border-0 shadow-sm hover:shadow-md transition-shadow h-full">
                         <div className="h-48 w-full relative bg-muted">
                           <Image
@@ -207,7 +209,7 @@ export default function Home() {
               </CardContent>
               <CardFooter className="justify-center pt-6">
                 <Button asChild>
-                  <Link href={{ pathname: '/projects' }}>
+                  <Link locale={locale} href={{ pathname: '/projects' }}>
                     {tHome('projects.viewAll')} <ArrowRight className="ml-2 h-4 w-4" />
                   </Link>
                 </Button>

@@ -10,7 +10,6 @@ import {
 } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { Github, ExternalLink, BarChart2, Clock, DollarSign, Database, Sparkles, ListChecks, LineChart, Calendar, Star } from "lucide-react"
-import { useTranslations } from 'next-intl'
 import { Metadata } from 'next'
 import { getTranslations } from 'next-intl/server';
 
@@ -29,11 +28,13 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
   };
 }
 
-// export const dynamic = 'force-static';
-// export const revalidate = false;
+export const dynamic = 'force-static';
+export const revalidate = false;
 
-export default function ProjectsPage() {
-  const t = useTranslations('projects')
+export default async function ProjectsPage({ params }: { params: Promise<{ locale: string }> }) {
+  // const t = useTranslations('projects')
+  const { locale } = await params;
+  const t = await getTranslations({ locale: locale, namespace: 'projects' });
   
   // Define project icons - these won't need translation
   const featureIcons = {

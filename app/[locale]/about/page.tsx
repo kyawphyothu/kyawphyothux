@@ -1,6 +1,5 @@
 import * as motion from "motion/react-client"
 import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card"
-import { useTranslations } from 'next-intl';
 import {
   SiReact, SiNextdotjs, SiTypescript, SiJavascript,
   SiTailwindcss, SiNodedotjs, SiGit, SiPhp, SiLaravel,
@@ -27,8 +26,13 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
   };
 }
 
-export default function AboutPage() {
-  const t = useTranslations('about');
+export const dynamic = 'force-static';
+export const revalidate = false;
+
+export default async function AboutPage({ params }: { params: Promise<{ locale: string }> }) {
+  // const t = useTranslations('about');
+  const { locale } = await params;
+  const t = await getTranslations({ locale: locale, namespace: 'about' });
 
   const fadeIn = {
     hidden: { opacity: 0, y: 20 },

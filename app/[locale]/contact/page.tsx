@@ -20,11 +20,13 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
   };
 }
 
-// export const dynamic = 'force-static';
-// export const revalidate = false;
+export const dynamic = 'force-static';
+export const revalidate = false;
 
-export default async function ContactPage() {
-  const t = await getTranslations('contact')
+export default async function ContactPage({ params }: { params: Promise<{ locale: string }> }) {
+  // const t = await getTranslations('contact')
+  const { locale } = await params;
+  const t = await getTranslations({ locale: locale, namespace: 'contact' });
   
   // Use contact info from translations
   const contactInfo = [
