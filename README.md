@@ -58,6 +58,20 @@ Copy `.env.example` to `.env` and fill in the values. If these are not set, the 
 | `npm run build` | Production build |
 | `npm start` | Start production server |
 | `npm run lint` | Run ESLint |
+| `npm run test` | Run tests in watch mode (Vitest) |
+| `npm run test:run` | Run tests once (CI) |
+
+## Testing
+
+Tests use [Vitest](https://vitest.dev/) and focus on the highest-value logic:
+
+- **API route tests** (`app/api/contact/route.test.ts`) — Contact form API: validation (required fields, email format, max length), honeypot and timing bot checks, rate limiting, missing-env (503), successful send with mocked nodemailer, and HTML escaping (XSS).
+
+To add more coverage later:
+
+- **Unit tests** — Pure helpers (e.g. if you extract validation or `escapeHtml` into `lib/`) and `lib/utils.ts` if it gains logic.
+- **Component tests** — Contact form with React Testing Library and mocked `fetch` (submit, error display).
+- **E2E tests** — Optional: [Playwright](https://playwright.dev/) for smoke tests (load home, navigate to contact, maybe submit with a test address).
 
 ## Learn more
 
