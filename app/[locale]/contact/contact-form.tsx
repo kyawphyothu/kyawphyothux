@@ -1,6 +1,6 @@
 "use client"
 
-import { useState } from "react"
+import { useState, useRef, useEffect } from "react"
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from "@/components/ui/card"
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
@@ -10,17 +10,24 @@ import { useTranslations } from 'next-intl'
 
 export default function ContactForm() {
   const t = useTranslations('contact')
-  
+  const formLoadedAt = useRef<number>(0)
+
   const [formData, setFormData] = useState({
     name: "",
     email: "",
     subject: "",
-    message: ""
+    message: "",
+    _honeypot: "", // Hidden from users; bots often fill it
   })
   const [isSubmitting, setIsSubmitting] = useState(false)
 
+  useEffect(() => {
+    formLoadedAt.current = Date.now()
+  }, [])
+
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target
+    if (name === "_honeypot") return // Don't update state for honeypot from visible inputs
     setFormData(prev => ({ ...prev, [name]: value }))
   }
 
@@ -34,7 +41,10 @@ export default function ContactForm() {
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify(formData),
+        body: JSON.stringify({
+          ...formData,
+          _formLoadedAt: formLoadedAt.current,
+        }),
       });
       
       const data = await response.json();
@@ -43,7 +53,7 @@ export default function ContactForm() {
         toast.success(t('success.title'), {
           description: t('success.description'),
         });
-        setFormData({ name: "", email: "", subject: "", message: "" });
+        setFormData({ name: "", email: "", subject: "", message: "", _honeypot: "" });
       } else {
         toast.error(t('error.title'), {
           description: data.error || t('error.description'),
@@ -97,6 +107,20 @@ export default function ContactForm() {
                 required
               />
             </div>
+          </div>
+
+          {/* Honeypot: hidden from users; leave empty. Bots often fill every field. */}
+          <div className="absolute -left-[9999px] w-1 h-1 overflow-hidden" aria-hidden="true">
+            <label htmlFor="contact-website">Website</label>
+            <input
+              id="contact-website"
+              type="text"
+              name="_honeypot"
+              tabIndex={-1}
+              autoComplete="off"
+              value={formData._honeypot}
+              onChange={(e) => setFormData((prev) => ({ ...prev, _honeypot: e.target.value }))}
+            />
           </div>
 
           <div className="space-y-2">
